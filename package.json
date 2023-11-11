@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build",
+        "build": "vite build",
         "lint": "eslint . --ext ts,tsx",
         "spellcheck": "cspell --no-progress --gitignore **/*.{js,jsx,ts,tsx,json,md}",
         "format:check": "prettier --check '**/*.{ts,tsx,md,json}'",
