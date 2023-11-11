@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.2](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.0.1...0.0.2) (2023-11-11)
+
+### Reverts
+
+-   add vercel output plugin ([#5](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/5)) ([6f7c52a](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/6f7c52a60fdbd2e57e5db2e33a8aa8ed71a14b10))
+
 ## 0.0.1 (2023-11-11)
 
 ### Chores
