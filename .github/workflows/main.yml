@@ -1,0 +1,20 @@
+name: Main
+on: [push]
+jobs:
+    test:
+        name: Test
+        runs-on: ubuntu-latest
+        env:
+            HUSKY: 0
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm run format:check
+            - run: npm run spellcheck
+            - run: npm run lint
+            - run: npm run ts:check
+            - run: npm run test
