@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    column-gap: var(--spacing-medium);
+    margin: var(--spacing-medium) 0;
+}
+
+.input {
+    flex: 1;
+}

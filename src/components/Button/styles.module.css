@@ -1,0 +1,29 @@
+.container {
+    padding: var(--spacing-medium) var(--spacing-small);
+    margin: 0;
+    background-color: var(--color-surface-tertiary);
+    border: 1px solid black;
+    border-radius: var(--radius-primary);
+    cursor: pointer;
+    transition: var(--animation-speed-fast) ease-in-out;
+}
+
+.primary {
+    background-color: var(--color-surface-tertiary);
+}
+
+.active {
+    background-color: var(--color-surface-success);
+}
+
+.success {
+    background-color: var(--color-surface-success);
+}
+
+.warning {
+    background-color: var(--color-surface-warning);
+}
+
+.danger {
+    background-color: var(--color-surface-danger);
+}

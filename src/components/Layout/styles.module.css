@@ -1,0 +1,11 @@
+.container {
+    padding: var(--spacing-large) var(--spacing-larger);
+    max-width: var(--breakpoint-xl);
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--spacing-large) 0;
+}
