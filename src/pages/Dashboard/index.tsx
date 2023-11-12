@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { Card } from '@components/Card';
@@ -7,6 +8,7 @@ import { useDashboardData } from './useDashboardData';
 
 export const DashboardPage = () => {
     const { data } = useDashboardData();
+    const { t } = useTranslation();
 
     return (
         <div className={styles.container}>
@@ -14,7 +16,9 @@ export const DashboardPage = () => {
                 <Link key={id} to={`/detail/${id}`}>
                     <Card>
                         <p>{name}</p>
-                        <p>Vlastník: {owner.name}</p>
+                        <p>
+                            {t('owner')}: {owner.name}
+                        </p>
                     </Card>
                 </Link>
             ))}
