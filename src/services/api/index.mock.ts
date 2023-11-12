@@ -1,6 +1,6 @@
 import { type ShoppingList } from '.';
 
-const user = {
+export const user = {
     a: { id: 'a', name: 'Petr Novák' },
     b: { id: 'b', name: 'Tomáš Novák' },
     c: { id: 'c', name: 'Marta Nováková' },

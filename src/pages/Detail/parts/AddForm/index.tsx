@@ -29,7 +29,7 @@ export const AddForm = ({ onAdd, placeholder }: IAddForm) => {
 
     return (
         <form className={styles.container} onSubmit={handleFormSubmit}>
-            <TextInput register={register('name')} placeholder={placeholder} className={styles.input} />
+            <TextInput register={register('name', { required: true })} placeholder={placeholder} className={styles.input} />
             <Button icon={PlusIcon} type="submit" variant="success" />
         </form>
     );
