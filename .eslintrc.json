@@ -10,6 +10,7 @@
                 "namedComponents": ["function-declaration", "arrow-function"]
             }
         ],
+        "react/prefer-read-only-props": "off",
 
         "@typescript-eslint/naming-convention": [
             "error",
@@ -37,9 +38,8 @@
                 "format": ["camelCase", "PascalCase"]
             }
         ],
-        "@typescript-eslint/triple-slash-reference": [
-            "error",
-            { "path": "always", "types": "always", "lib": "always" }
-        ]
+        "@typescript-eslint/triple-slash-reference": ["error", { "path": "always", "types": "always", "lib": "always" }],
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/no-confusing-void-expression": "off"
     }
 }
