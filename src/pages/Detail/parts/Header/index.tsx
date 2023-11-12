@@ -9,7 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './styles.module.css';
 
 interface IHeader {
-    name: string;
+    name?: string;
     onArchiveClick: () => void;
     onDeleteClick: () => void;
     onNameChange: (name: string) => void;
@@ -23,7 +23,7 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 export const Header = ({
-    name,
+    name = '',
     onArchiveClick: handleArchiveClick,
     onDeleteClick: handleDeleteClick,
     onNameChange: handleNameChange,

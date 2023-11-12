@@ -2,8 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useUserContext } from '@contexts/UserContext/useUserContext';
 import { useErrorHandler } from '@hooks/useErrorHandler';
-import { getShoppingLists } from '@services/api';
-import { type ShoppingList } from '@services/api/types';
+import { type ShoppingList, getShoppingLists } from '@services/api';
 
 export const useDashboardData = () => {
     const [data, setData] = useState<ShoppingList[] | undefined>();

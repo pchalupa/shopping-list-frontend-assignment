@@ -9,13 +9,18 @@ import { Item } from './parts/Item/idnex';
 import styles from './styles.module.css';
 
 interface IList {
-    items: Array<{ id: string; name: string; solvedAt: string }>;
+    items?: Array<{ id: string; name: string; solvedAt?: string }>;
     onItemClick: (id: string) => void;
     onItemAdd: (item: { name: string }) => void;
     onItemDeleteClick: (id: string) => void;
 }
 
-export const List = ({ items, onItemClick: handleItemSolveClick, onItemDeleteClick: handleItemDeleteClick, onItemAdd: handleItemAdd }: IList) => {
+export const List = ({
+    items = [],
+    onItemClick: handleItemSolveClick,
+    onItemDeleteClick: handleItemDeleteClick,
+    onItemAdd: handleItemAdd,
+}: IList) => {
     const [filter, setFilter] = useState<Filter>(Filter.Active);
     const { t } = useTranslation();
     const data = items.filter(({ solvedAt }) => !solvedAt || filter === Filter.All);

@@ -7,14 +7,14 @@ import { Member } from './parts/Member';
 import styles from './styles.module.css';
 
 interface IMetadata {
-    owner: string;
-    members: Array<{ id: string; name: string }>;
+    owner?: string;
+    members?: Array<{ id: string; name: string }>;
     onMemberAdd: (member: { name: string }) => void;
     onMemberRemove: (id: string) => void;
     isOwner: boolean;
 }
 
-export const Metadata = ({ owner, members, onMemberAdd, onMemberRemove, isOwner }: IMetadata) => {
+export const Metadata = ({ owner = '', members = [], onMemberAdd, onMemberRemove, isOwner }: IMetadata) => {
     const { t } = useTranslation();
 
     return (

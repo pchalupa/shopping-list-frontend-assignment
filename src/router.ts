@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from '@components/Layout';
 import { DashboardPage } from '@pages/Dashboard';
 import { DetailPage } from '@pages/Detail';
-import ErrorPage from '@pages/Error';
+import { ErrorPage } from '@pages/Error';
 
 export enum Route {
     Dashboard = '/',
