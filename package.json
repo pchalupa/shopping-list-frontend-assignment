@@ -7,7 +7,7 @@
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint . --ext ts,tsx",
-        "lint:css": "stylelint 'src/**/*.styled.ts'",
+        "lint:css": "stylelint 'src/**/*.module.css'",
         "spellcheck": "cspell --no-progress --gitignore **/*.{js,jsx,ts,tsx,json,md}",
         "format:check": "prettier --check '**/*.{ts,tsx,md,json}'",
         "ts:check": "tsc --noEmit",
