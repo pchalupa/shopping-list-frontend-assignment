@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.0.2...0.1.0) (2023-11-12)
+
+### Features
+
+-   **detail:** add detail page ([#6](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/6)) ([aac037a](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/aac037af28926c1828f6399f902166f79f0537e9))
+
+### Documentation
+
+-   update readme ([#7](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/7)) ([0ee9933](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/0ee9933aec47f160ca14d2150bd3e63685b5e9d3))
+
 ## [0.0.2](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.0.1...0.0.2) (2023-11-11)
 
 ### Reverts
