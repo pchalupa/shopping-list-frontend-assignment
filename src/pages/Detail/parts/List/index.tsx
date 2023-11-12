@@ -5,7 +5,7 @@ import { Button } from '@components/Button';
 
 import { AddForm } from '../AddForm';
 import { Filter } from './index.preset';
-import { Item } from './parts/Item/idnex';
+import { Item } from './parts/Item';
 import styles from './styles.module.css';
 
 interface IList {
