@@ -16,5 +16,6 @@ jobs:
             - run: npm run format:check
             - run: npm run spellcheck
             - run: npm run lint
+            - run: npm run lint:css
             - run: npm run ts:check
             - run: npm run test -- --passWithNoTests

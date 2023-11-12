@@ -1,0 +1,53 @@
+:root {
+    /* color */
+    --color-white: hsl(0deg 0% 100%);
+    --color-gray: hsl(218deg 12% 87%);
+    --color-black: hsl(0deg 0% 0%);
+    --color-primary: hsl(210deg 17% 24%);
+    --color-neutral: var(--color-primary);
+    --color-success: hsl(150deg 100% 80%);
+    --color-danger: hsl(340, 100%, 80%);
+    --color-warning: hsl(50, 100%, 80%);
+
+    /* color text */
+    --color-text-primary: var(--color-primary);
+    --color-text-secondary: hsl(210deg 10% 62%);
+    --color-text-tertiary: hsl(210deg 6% 80%);
+    --color-text-success: var(--color-success);
+    --color-text-warning: var(--color-warning);
+    --color-text-danger: var(--color-danger);
+
+    /* color surface */
+    --color-surface-primary: var(--color-white);
+    --color-surface-secondary: hsl(0deg 0% 95%);
+    --color-surface-tertiary: hsla(0deg 0% 0%, 0.5);
+    --color-surface-success: var(--color-success);
+    --color-surface-warning: var(--color-warning);
+    --color-surface-danger: var(--color-danger);
+
+    /* font */
+    --font-helvetica: Helvetica;
+    --font-primary: var(--font-helvetica);
+
+    /* font size */
+    --font-size-small: 0.8rem;
+    --font-size-normal: 1rem;
+    --font-size-big: 1.25rem;
+
+    /* radius */
+    --radius-primary: 0.25rem;
+    --radius-secondary: 0.1rem;
+
+    /* animation */
+    --animation-speed-slow: 400ms;
+    --animation-speed-fast: 100ms;
+
+    /* spacing */
+    --spacing-small: 0.25rem;
+    --spacing-medium: 0.5rem;
+    --spacing-large: 1rem;
+    --spacing-larger: 1.5rem;
+
+    /* breakpoints */
+    --breakpoint-xl: 1280px;
+}

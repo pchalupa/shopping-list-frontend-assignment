@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex: 1.5 0.75 0;
+    flex-direction: column;
+    row-gap: var(--spacing-large);
+    min-width: 20rem;
+}
+
+.filter {
+    display: flex;
+    column-gap: var(--spacing-medium);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-medium);
+}
+
+.empty {
+    text-align: center;
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+}

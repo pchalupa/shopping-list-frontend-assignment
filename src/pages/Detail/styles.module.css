@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing-large);
+}
+
+.loader {
+    display: flex;
+    margin: 0 auto;
+}

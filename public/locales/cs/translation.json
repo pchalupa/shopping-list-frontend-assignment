@@ -1,0 +1,13 @@
+{
+    "filter": {
+        "active": "Aktivní",
+        "all": "Vše"
+    },
+    "emptyList": "Žádné položky",
+    "archive": "Archivovat",
+    "delete": "Smazat",
+    "owner": "Vlastník",
+    "members": "Členové",
+    "newItem": "Nová položka",
+    "addMember": "Přidat člena"
+}

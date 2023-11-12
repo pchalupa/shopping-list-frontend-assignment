@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-large) 0;
+}
+
+.title {
+    margin: 0;
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    column-gap: var(--spacing-medium);
+}
