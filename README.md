@@ -6,15 +6,9 @@
 
 ## Setup
 
-1. Clone the repository
-
 ```shell
 git clone git@github.com:pchalupa/shopping-list-frontend-assignment.git
-```
-
-2. Install node modules
-
-```shell
+cd shopping-list-frontend-assignment
 npm install
 ```
 
