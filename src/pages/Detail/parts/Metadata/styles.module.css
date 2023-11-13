@@ -11,3 +11,9 @@
 .text {
     margin: 0;
 }
+
+.members {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-medium);
+}
