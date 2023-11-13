@@ -5,6 +5,7 @@
     border: 1px solid black;
     border-radius: var(--radius-primary);
     cursor: pointer;
+    color: var(--color-text-primary);
     transition: var(--animation-speed-fast) ease-in-out;
 }
 
