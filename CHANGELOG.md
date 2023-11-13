@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.2](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.1.1...0.1.2) (2023-11-13)
+
+### Chores
+
+-   fix page refresh ([#9](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/9)) ([f6e2d40](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/f6e2d40b8c41129472fe066fb1d55db27c0a28dd))
+
 ## [0.1.1](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.1.0...0.1.1) (2023-11-13)
 
 ### Bug Fixes
