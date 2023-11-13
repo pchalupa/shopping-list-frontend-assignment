@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.1.0...0.1.1) (2023-11-13)
+
+### Bug Fixes
+
+-   **detail:** members spacing ([#8](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/8)) ([128c4e6](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/128c4e6136a9d7c6ef1b96b7917614949abf9168))
+
 ## [0.1.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.0.2...0.1.0) (2023-11-12)
 
 ### Features
