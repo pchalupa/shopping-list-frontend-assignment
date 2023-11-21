@@ -9,7 +9,7 @@ import { Item } from './parts/Item';
 import styles from './styles.module.css';
 
 interface IList {
-    items?: Array<{ id: string; name: string; solvedAt?: string }>;
+    items?: Array<{ id: string; name: string; solvedAt?: number }>;
     onItemClick: (id: string) => void;
     onItemAdd: (item: { name: string }) => void;
     onItemDeleteClick: (id: string) => void;
