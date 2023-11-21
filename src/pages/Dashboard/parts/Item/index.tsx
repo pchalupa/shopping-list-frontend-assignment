@@ -15,10 +15,11 @@ interface IItem {
     name: string;
     owner: { name: string };
     updatedAt: number;
+    isOwner: boolean;
     onRemoveClick: (id: string) => void;
 }
 
-export const Item = ({ id, name, owner, updatedAt, onRemoveClick }: IItem) => {
+export const Item = ({ id, name, owner, updatedAt, isOwner, onRemoveClick }: IItem) => {
     const { t } = useTranslation();
 
     const handleRemoveClick = useCallback(() => onRemoveClick(id), [id, onRemoveClick]);
@@ -32,9 +33,11 @@ export const Item = ({ id, name, owner, updatedAt, onRemoveClick }: IItem) => {
                     {t('owner')}: {owner.name}
                 </p>
             </Link>
-            <div className={styles.actionsWrapper}>
-                <Button icon={CrossIcon} onClick={handleRemoveClick} />
-            </div>
+            {isOwner && (
+                <div className={styles.actionsWrapper}>
+                    <Button icon={CrossIcon} onClick={handleRemoveClick} />
+                </div>
+            )}
         </Card>
     );
 };
