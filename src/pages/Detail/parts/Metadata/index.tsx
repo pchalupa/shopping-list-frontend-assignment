@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { Card } from '@components/Card';
+import { Text } from '@components/Text';
 
 import { AddForm } from '../AddForm';
 import { Member } from './parts/Member';
@@ -20,7 +21,7 @@ export const Metadata = ({ owner = '', members = [], onMemberAdd, onMemberRemove
     return (
         <Card className={styles.container}>
             <p className={styles.title}>{t('owner')}</p>
-            <p className={styles.text}>{owner}</p>
+            <Text>{owner}</Text>
             <p className={styles.title}>{t('members')}</p>
             <div className={styles.members}>
                 {members.map(({ id, name }) => (
