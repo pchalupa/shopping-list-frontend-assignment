@@ -1,9 +1,9 @@
 export enum Filter {
     Active,
-    All,
+    Archived,
 }
 
 export const criteria = [
     { translationKey: 'active', value: Filter.Active },
-    { translationKey: 'all', value: Filter.All },
+    { translationKey: 'archived', value: Filter.Archived },
 ];

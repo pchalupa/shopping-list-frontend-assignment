@@ -6,19 +6,8 @@
     min-width: 20rem;
 }
 
-.filter {
-    display: flex;
-    column-gap: var(--spacing-medium);
-}
-
 .list {
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-medium);
-}
-
-.empty {
-    text-align: center;
-    font-size: var(--font-size-small);
-    color: var(--color-text-secondary);
 }

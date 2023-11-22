@@ -14,6 +14,7 @@ interface IHeader {
     onDeleteClick: () => void;
     onNameChange: (name: string) => void;
     isOwner: boolean;
+    isArchived: boolean;
 }
 
 const formSchema = z.object({
@@ -28,6 +29,7 @@ export const Header = ({
     onDeleteClick: handleDeleteClick,
     onNameChange: handleNameChange,
     isOwner,
+    isArchived,
 }: IHeader) => {
     const { register, handleSubmit, setValue } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
     const { t } = useTranslation();
@@ -52,7 +54,7 @@ export const Header = ({
             </h1>
             {isOwner && (
                 <div className={styles.wrapper}>
-                    <Button text={t('archive')} variant="warning" onClick={handleArchiveClick} />
+                    {!isArchived && <Button text={t('archive')} variant="warning" onClick={handleArchiveClick} />}
                     <Button text={t('delete')} variant="danger" onClick={handleDeleteClick} />
                 </div>
             )}

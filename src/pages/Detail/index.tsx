@@ -35,6 +35,7 @@ export const DetailPage = () => {
             <Header
                 name={data?.name}
                 isOwner={isOwner}
+                isArchived={Boolean(data?.archivedAt)}
                 onArchiveClick={handleArchiveClick}
                 onDeleteClick={handleDeleteClick}
                 onNameChange={updateName}
