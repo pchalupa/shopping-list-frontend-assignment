@@ -1,6 +1,7 @@
 {
     "filter": {
         "active": "Aktivní",
+        "archived": "Archivované",
         "all": "Vše"
     },
     "emptyList": "Žádné položky",
