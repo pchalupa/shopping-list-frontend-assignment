@@ -1,5 +1,4 @@
 import { format } from 'date-fns';
-import { useCallback } from 'react';
 import { RxCross2 as CrossIcon } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 
@@ -15,24 +14,20 @@ interface IItem {
     owner: { name: string };
     updatedAt: number;
     isOwner: boolean;
-    onRemoveClick: (id: string) => void;
+    onRemoveClick: () => void;
 }
 
-export const Item = ({ id, name, owner, updatedAt, isOwner, onRemoveClick }: IItem) => {
-    const handleRemoveClick = useCallback(() => onRemoveClick(id), [id, onRemoveClick]);
-
-    return (
-        <Card className={styles.container}>
-            <Link key={id} to={`/detail/${id}`} className={styles.link}>
-                <p>{name}</p>
-                <p>{owner.name}</p>
-                <Small>{format(updatedAt, 'ii.M.yyyy HH:mm')}</Small>
-            </Link>
-            {isOwner && (
-                <div className={styles.actionsWrapper}>
-                    <Button icon={CrossIcon} onClick={handleRemoveClick} />
-                </div>
-            )}
-        </Card>
-    );
-};
+export const Item = ({ id, name, owner, updatedAt, isOwner, onRemoveClick: handleRemoveClick }: IItem) => (
+    <Card className={styles.container}>
+        <Link key={id} to={`/detail/${id}`} className={styles.link}>
+            <p>{name}</p>
+            <p>{owner.name}</p>
+            <Small>{format(updatedAt, 'ii.M.yyyy HH:mm')}</Small>
+        </Link>
+        {isOwner && (
+            <div className={styles.actionsWrapper}>
+                <Button icon={CrossIcon} onClick={handleRemoveClick} />
+            </div>
+        )}
+    </Card>
+);
