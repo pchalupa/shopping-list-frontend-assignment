@@ -10,5 +10,5 @@
     ],
     "language": "en,cs",
     "dictionaries": ["project-words"],
-    "ignorePaths": ["node_modules", "CHANGELOG.md", "package.json"]
+    "ignorePaths": ["node_modules", "CHANGELOG.md", "dist", "locales", "package.json", "*.mock.ts"]
 }
