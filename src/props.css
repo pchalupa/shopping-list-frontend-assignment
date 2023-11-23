@@ -1,7 +1,7 @@
 :root {
     /* color */
     --color-white: hsl(0deg 0% 100%);
-    --color-gray: hsl(218deg 12% 87%);
+    --color-gray: hsl(217deg, 3%, 52%);
     --color-black: hsl(0deg 0% 0%);
     --color-primary: hsl(210deg 17% 24%);
     --color-neutral: var(--color-primary);

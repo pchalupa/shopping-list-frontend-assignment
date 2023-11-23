@@ -10,5 +10,8 @@
     "owner": "Vlastník",
     "members": "Členové",
     "newItem": "Nová položka",
-    "addMember": "Přidat člena"
+    "addMember": "Přidat člena",
+    "confirm": "Potvrdit",
+    "close": "Zavřít",
+    "confirmDeletion": "Potvrďte smazání"
 }

@@ -1,8 +1,13 @@
 import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Route } from 'router';
 
+import { Dialog as DeleteDialog } from '@components/Dialog';
+import { Ctas } from '@components/Dialog/parts/Ctas';
+import { useDialog } from '@components/Dialog/useDialog';
 import { Loader } from '@components/Loader';
+import { Text } from '@components/Text';
 
 import { Header } from './parts/Header';
 import { List } from './parts/List';
@@ -13,13 +18,15 @@ import { useShoppingListData } from './useShoppingListData';
 export const DetailPage = () => {
     const { id = '' } = useParams<{ id: string }>();
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const { isLoading, data, updateName, remove, archive, addItem, solveItem, removeItem, addMember, removeMember, isOwner, isMember } =
         useShoppingListData(id);
-
-    const handleDeleteClick = useCallback(async () => {
-        await remove();
-        navigate(Route.Dashboard);
-    }, [remove, navigate]);
+    const { dialogRef: deleteDialogRef, prompt: promptToDelete } = useDialog({
+        async onConfirm() {
+            await remove();
+            navigate(Route.Dashboard);
+        },
+    });
 
     const handleArchiveClick = useCallback(async () => {
         await archive();
@@ -37,13 +44,21 @@ export const DetailPage = () => {
                 isOwner={isOwner}
                 isArchived={Boolean(data?.archivedAt)}
                 onArchiveClick={handleArchiveClick}
-                onDeleteClick={handleDeleteClick}
+                onDeleteClick={promptToDelete}
                 onNameChange={updateName}
             />
             <div className={styles.wrapper}>
                 <List items={data?.items} onItemClick={solveItem} onItemAdd={addItem} onItemDeleteClick={removeItem} />
                 <Metadata owner={data?.owner?.name} members={data?.members} isOwner={isOwner} onMemberAdd={addMember} onMemberRemove={removeMember} />
             </div>
+            <DeleteDialog dialogRef={deleteDialogRef}>
+                {({ onConfirm, onCancel }) => (
+                    <>
+                        <Text>{t('confirmDeletion')}</Text>
+                        <Ctas onConfirm={onConfirm} onCancel={onCancel} />
+                    </>
+                )}
+            </DeleteDialog>
         </div>
     );
 };

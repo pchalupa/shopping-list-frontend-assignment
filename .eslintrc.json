@@ -12,6 +12,7 @@
         ],
         "react/prefer-read-only-props": "off",
         "react/button-has-type": "off",
+        "react/require-default-props": "off",
 
         "@typescript-eslint/naming-convention": [
             "error",
@@ -42,6 +43,7 @@
         "@typescript-eslint/triple-slash-reference": ["error", { "path": "always", "types": "always", "lib": "always" }],
         "@typescript-eslint/consistent-type-definitions": "off",
         "@typescript-eslint/no-confusing-void-expression": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off"
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/ban-types": ["error", {}]
     }
 }
