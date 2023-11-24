@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-small);
+    transform: translate(0, 0);
+}
+
+.container:hover {
+    transform: translate(-0.2rem, -0.2rem);
+}
+
+.link {
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+.title {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+}
+
+.footer {
+    --size: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--size);
+}
+
+.delete-button {
+    width: var(--size);
+    height: var(--size);
+    border: none;
+}

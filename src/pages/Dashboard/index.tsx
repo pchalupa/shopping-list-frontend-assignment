@@ -12,7 +12,7 @@ import { useDialog } from '@components/Dialog/useDialog';
 import { TextInput } from '@components/TextInput';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { List } from './parts/List';
+import { Grid } from './parts/Grid';
 import styles from './styles.module.css';
 import { useDashboardData } from './useDashboardData';
 
@@ -42,7 +42,7 @@ export const DashboardPage = () => {
 
     return (
         <div>
-            <List items={data} onItemRemove={remove} />
+            <Grid items={data} onItemRemove={remove} />
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
