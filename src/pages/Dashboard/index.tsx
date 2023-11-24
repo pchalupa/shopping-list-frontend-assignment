@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { RxPlus as PlusIcon } from 'react-icons/rx';
@@ -34,10 +35,15 @@ export const DashboardPage = () => {
         navigate(`${Route.Detail}/${newList?.id}`);
     });
 
+    const handleAddButtonClick = useCallback(() => {
+        reset();
+        prompt();
+    }, [reset, prompt]);
+
     return (
         <div>
             <List items={data} onItemRemove={remove} />
-            <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={prompt} />
+            <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
                     <div>

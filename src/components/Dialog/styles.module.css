@@ -11,7 +11,8 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    row-gap: var(--spacing-medium);
+    align-items: center;
+    row-gap: var(--spacing-small);
 }
 
 .container::backdrop {
