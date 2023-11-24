@@ -4,12 +4,14 @@
     row-gap: var(--spacing-small);
 }
 
-.label {
-    font-size: 0.9rem;
-}
-
 .input {
     border: 1px solid black;
     padding: var(--spacing-medium);
     border-radius: var(--radius-primary);
+    border-color: inherit;
+}
+
+.error {
+    color: var(--color-text-danger);
+    border-color: var(--color-danger);
 }

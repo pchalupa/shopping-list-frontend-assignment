@@ -13,5 +13,6 @@
     "newItem": "Nová položka",
     "addMember": "Přidat člena",
     "confirmDeletion": "Potvrďte smazání",
-    "listName": "Jméno seznamu"
+    "listName": "Jméno seznamu",
+    "required": "Vyplňte prosím toto pole"
 }

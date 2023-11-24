@@ -14,13 +14,13 @@ interface IAddForm {
 }
 
 const formSchema = z.object({
-    name: z.string().trim().min(1),
+    name: z.string().trim().min(1, { message: 'required' }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
 
 export const AddForm = ({ onAdd, placeholder }: IAddForm) => {
-    const { register, handleSubmit, reset } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
+    const { register, handleSubmit, reset, formState } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
 
     const handleFormSubmit = handleSubmit((data) => {
         onAdd(data);
@@ -29,8 +29,13 @@ export const AddForm = ({ onAdd, placeholder }: IAddForm) => {
 
     return (
         <form className={styles.container} onSubmit={handleFormSubmit}>
-            <TextInput register={register('name', { required: true })} placeholder={placeholder} className={styles.input} />
-            <Button icon={PlusIcon} type="submit" variant="success" />
+            <TextInput
+                register={register('name', { required: true })}
+                placeholder={placeholder}
+                className={styles.input}
+                error={formState.errors.name}
+            />
+            <Button icon={PlusIcon} type="submit" variant="success" className={styles.submit} />
         </form>
     );
 };

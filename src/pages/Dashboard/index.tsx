@@ -16,14 +16,14 @@ import { List } from './parts/List';
 import styles from './styles.module.css';
 import { useDashboardData } from './useDashboardData';
 
-const formSchema = z.object({ name: z.string().min(1) });
+const formSchema = z.object({ name: z.string().min(1, { message: 'required' }) });
 
 type FormSchema = z.infer<typeof formSchema>;
 
 export const DashboardPage = () => {
     const { data, add, remove } = useDashboardData();
     const { dialogRef, prompt, close } = useDialog({});
-    const { register, handleSubmit, reset } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
+    const { register, handleSubmit, reset, formState } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
     const navigate = useNavigate();
     const { t } = useTranslation();
 
@@ -46,14 +46,17 @@ export const DashboardPage = () => {
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
-                    <div>
-                        <form className={styles.addListForm} onSubmit={handleFormSubmit}>
-                            <TextInput label={t('listName')} placeholder={t('listName')} register={register('name', { required: true })} />
-                            <div>
-                                <Button type="submit" text={t('save')} variant="success" />
-                            </div>
-                        </form>
-                    </div>
+                    <form className={styles.addListForm} onSubmit={handleFormSubmit}>
+                        <TextInput
+                            label={t('listName')}
+                            placeholder={t('listName')}
+                            register={register('name', { required: true })}
+                            error={formState.errors.name}
+                        />
+                        <div>
+                            <Button type="submit" text={t('save')} variant="success" />
+                        </div>
+                    </form>
                 )}
             </AddListDialog>
         </div>
