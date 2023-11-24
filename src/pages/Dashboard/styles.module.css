@@ -1,0 +1,17 @@
+.add-button {
+    --size: 3rem;
+
+    position: fixed;
+    right: 5vw;
+    bottom: 2.5vh;
+    width: var(--size);
+    height: var(--size);
+    border-radius: calc(var(--size) / 2);
+}
+
+.add-list-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-large);
+    width: 100%;
+}

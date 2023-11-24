@@ -2,8 +2,8 @@ import { useCallback, useRef } from 'react';
 
 import { type Actions, type Options } from '.';
 
-export const useDialog = (options: Options) => {
-    const dialogRef = useRef<Actions & Options>({ onConfirm: options.onConfirm, onCancel: options.onCancel, prompt: undefined });
+export const useDialog = (options?: Options) => {
+    const dialogRef = useRef<Actions & Options>({ onConfirm: options?.onConfirm, onCancel: options?.onCancel, prompt: undefined });
 
     const prompt = useCallback(
         (promptOptions?: Options) => {
@@ -14,5 +14,9 @@ export const useDialog = (options: Options) => {
         [dialogRef],
     );
 
-    return { dialogRef, prompt };
+    const close = useCallback(() => {
+        if (dialogRef.current.close) dialogRef.current.close();
+    }, []);
+
+    return { dialogRef, prompt, close };
 };

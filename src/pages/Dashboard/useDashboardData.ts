@@ -25,11 +25,24 @@ export const useDashboardData = () => {
         }
     }, [handleError, user]);
 
+    const add = useCallback(
+        async (data: { name: string }) => {
+            try {
+                const result = await Api.addShoppingList({ name: data.name, owner: user });
+                await fetch();
+
+                return result;
+            } catch (error) {
+                handleError(error);
+            }
+        },
+        [user, fetch, handleError],
+    );
+
     const remove = useCallback(
         async (listId: string) => {
             try {
                 await Api.removeShoppingList(listId);
-
                 await fetch();
             } catch (error) {
                 handleError(error);
@@ -42,5 +55,5 @@ export const useDashboardData = () => {
         void fetch();
     }, [fetch]);
 
-    return { data, isLoading, remove };
+    return { data, isLoading, add, remove };
 };

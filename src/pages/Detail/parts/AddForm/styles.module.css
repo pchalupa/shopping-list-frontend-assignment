@@ -7,3 +7,7 @@
 .input {
     flex: 1;
 }
+
+.submit {
+    align-self: flex-start;
+}

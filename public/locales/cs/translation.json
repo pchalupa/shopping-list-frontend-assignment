@@ -7,11 +7,12 @@
     "emptyList": "Žádné položky",
     "archive": "Archivovat",
     "delete": "Smazat",
+    "save": "Uložit",
     "owner": "Vlastník",
     "members": "Členové",
     "newItem": "Nová položka",
     "addMember": "Přidat člena",
-    "confirm": "Potvrdit",
-    "close": "Zavřít",
-    "confirmDeletion": "Potvrďte smazání"
+    "confirmDeletion": "Potvrďte smazání",
+    "listName": "Jméno seznamu",
+    "required": "Vyplňte prosím toto pole"
 }
