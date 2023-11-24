@@ -1,4 +1,4 @@
-.addButton {
+.add-button {
     --size: 3rem;
 
     position: fixed;
@@ -9,7 +9,7 @@
     border-radius: calc(var(--size) / 2);
 }
 
-.addListForm {
+.add-list-form {
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-large);
