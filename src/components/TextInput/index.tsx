@@ -7,9 +7,13 @@ import styles from './styles.module.css';
 interface ITextInput {
     register: UseFormRegisterReturn;
     placeholder?: string;
+    label?: string;
     className?: string;
 }
 
-export const TextInput = ({ register, placeholder, className }: ITextInput) => (
-    <input type="text" {...register} className={classNames(className, styles.container)} placeholder={placeholder} />
+export const TextInput = ({ register, label, placeholder, className }: ITextInput) => (
+    <label className={classNames(className, styles.container)}>
+        {label && <span className={styles.label}>{label}</span>}
+        <input type="text" {...register} className={styles.input} placeholder={placeholder} />
+    </label>
 );

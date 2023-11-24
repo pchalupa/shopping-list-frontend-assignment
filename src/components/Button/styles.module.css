@@ -1,6 +1,7 @@
 .container {
     padding: var(--spacing-medium) var(--spacing-small);
     margin: 0;
+    max-width: 15rem;
     background-color: var(--color-surface-tertiary);
     border: 1px solid black;
     border-radius: var(--radius-primary);

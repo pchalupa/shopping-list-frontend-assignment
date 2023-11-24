@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Route } from 'router';
 
+import { Button } from '@components/Button';
 import { Dialog as DeleteDialog } from '@components/Dialog';
-import { Ctas } from '@components/Dialog/parts/Ctas';
 import { useDialog } from '@components/Dialog/useDialog';
 import { Loader } from '@components/Loader';
 import { Text } from '@components/Text';
@@ -52,10 +52,10 @@ export const DetailPage = () => {
                 <Metadata owner={data?.owner?.name} members={data?.members} isOwner={isOwner} onMemberAdd={addMember} onMemberRemove={removeMember} />
             </div>
             <DeleteDialog dialogRef={deleteDialogRef}>
-                {({ onConfirm, onCancel }) => (
+                {({ onConfirm }) => (
                     <>
                         <Text>{t('confirmDeletion')}</Text>
-                        <Ctas onConfirm={onConfirm} onCancel={onCancel} />
+                        <Button variant="danger" text={t('delete')} onClick={onConfirm} />
                     </>
                 )}
             </DeleteDialog>

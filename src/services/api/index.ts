@@ -26,6 +26,23 @@ export async function getShoppingLists(userId: string): Promise<ShoppingList[]> 
     return result;
 }
 
+export async function addShoppingList({ name, owner }: Pick<ShoppingList, 'name' | 'owner'>): Promise<ShoppingList> {
+    const currentTime = Date.now();
+    const list = {
+        id: nanoid(),
+        name,
+        owner,
+        members: [],
+        items: [],
+        createdAt: currentTime,
+        updatedAt: currentTime,
+    };
+
+    mock.push(list);
+
+    return list;
+}
+
 export async function getShoppingList(id: string): Promise<ShoppingList> {
     const result = mock.find(({ id: listId }) => listId === id);
 

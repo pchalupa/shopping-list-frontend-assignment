@@ -11,12 +11,15 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     row-gap: var(--spacing-medium);
 }
 
 .container::backdrop {
     background-color: gray;
     opacity: 0.75;
+}
+
+.closeButton {
+    align-self: flex-end;
+    border: none;
 }

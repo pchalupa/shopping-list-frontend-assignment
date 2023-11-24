@@ -1,10 +1,12 @@
 import { type MutableRefObject, useCallback, useEffect, useRef } from 'react';
+import { RxCross2 as CrossIcon } from 'react-icons/rx';
 
+import { Button } from '@components/Button';
 import { classNames } from '@utils/classNames';
 
 import styles from './styles.module.css';
 
-export type Actions = { prompt?: () => void };
+export type Actions = { prompt?: () => void; close?: () => void };
 
 export type Options = { onConfirm?: () => void; onCancel?: () => void };
 
@@ -33,11 +35,15 @@ export const Dialog = ({ children, className, dialogRef }: IDialog) => {
 
     useEffect(() => {
         dialogRef.current.prompt = show;
-    }, [dialogRef, show]);
+        dialogRef.current.close = close;
+    }, [dialogRef, show, close]);
 
     return (
         <dialog ref={ref} className={classNames(styles.container, className)}>
-            <div className={classNames(styles.wrapper, className)}>{children({ onConfirm: handleConfirm, onCancel: handleCancel })}</div>
+            <div className={classNames(styles.wrapper, className)}>
+                <Button icon={CrossIcon} className={styles.closeButton} onClick={handleCancel} />
+                {children({ onConfirm: handleConfirm, onCancel: handleCancel })}
+            </div>
         </dialog>
     );
 };

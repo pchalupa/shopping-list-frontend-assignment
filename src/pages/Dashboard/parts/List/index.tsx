@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Button } from '@components/Button';
 import { Dialog as DeleteDialog } from '@components/Dialog';
-import { Ctas } from '@components/Dialog/parts/Ctas';
 import { useDialog } from '@components/Dialog/useDialog';
 import { Filter } from '@components/Filter';
 import { Small } from '@components/Small';
@@ -58,10 +58,10 @@ export const List = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
                 )}
             </div>
             <DeleteDialog dialogRef={deleteDialogRef}>
-                {({ onConfirm, onCancel }) => (
+                {({ onConfirm }) => (
                     <>
                         <Text>{t('confirmDeletion')}</Text>
-                        <Ctas onConfirm={onConfirm} onCancel={onCancel} />
+                        <Button variant="danger" text={t('delete')} onClick={onConfirm} />
                     </>
                 )}
             </DeleteDialog>
