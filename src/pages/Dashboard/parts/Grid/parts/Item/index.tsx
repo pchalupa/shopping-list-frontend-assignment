@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@components/Button';
 import { Card } from '@components/Card';
 import { Small } from '@components/Small';
+import { Text } from '@components/Text';
 
 import styles from './styles.module.css';
 
@@ -20,14 +21,12 @@ interface IItem {
 export const Item = ({ id, name, owner, updatedAt, isOwner, onRemoveClick: handleRemoveClick }: IItem) => (
     <Card className={styles.container}>
         <Link key={id} to={`/detail/${id}`} className={styles.link}>
-            <p>{name}</p>
-            <p>{owner.name}</p>
-            <Small>{format(updatedAt, 'ii.M.yyyy HH:mm')}</Small>
+            <h1 className={styles.title}>{name}</h1>
         </Link>
-        {isOwner && (
-            <div className={styles.actionsWrapper}>
-                <Button icon={CrossIcon} onClick={handleRemoveClick} />
-            </div>
-        )}
+        <Text>{owner.name}</Text>
+        <div className={styles.footer}>
+            <Small>{format(updatedAt, 'ii.M.yyyy HH:mm')}</Small>
+            {isOwner && <Button icon={CrossIcon} variant="danger" className={styles.deleteButton} onClick={handleRemoveClick} />}
+        </div>
     </Card>
 );

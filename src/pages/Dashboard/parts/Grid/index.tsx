@@ -18,7 +18,7 @@ interface IList {
     onItemRemove: (id: string) => void;
 }
 
-export const List = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
+export const Grid = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
     const [filter, setFilter] = useState(criteria.at(0)?.value);
     const { user } = useUserContext();
     const { dialogRef: deleteDialogRef, prompt: deletePrompt } = useDialog({});
