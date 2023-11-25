@@ -10,6 +10,11 @@
     transition: var(--animation-speed-fast) ease-in-out;
 }
 
+.container:hover {
+    opacity: 0.75;
+    box-shadow: inset -0.1rem -0.1rem 0.1rem var(--color-gray);
+}
+
 .primary {
     background-color: var(--color-surface-tertiary);
 }
