@@ -39,10 +39,10 @@ export const Dialog = ({ children, className, dialogRef }: IDialog) => {
     }, [dialogRef, show, close]);
 
     return (
-        <dialog ref={ref} className={classNames(styles.container, className)}>
-            <div className={classNames(styles.wrapper, className)}>
+        <dialog ref={ref} className={styles.dialog}>
+            <div className={styles.container}>
                 <Button icon={CrossIcon} className={styles.closeButton} onClick={handleCancel} />
-                {children({ onConfirm: handleConfirm, onCancel: handleCancel })}
+                <div className={classNames(styles.wrapper, className)}>{children({ onConfirm: handleConfirm, onCancel: handleCancel })}</div>
             </div>
         </dialog>
     );

@@ -21,9 +21,9 @@ interface IItem {
 export const Item = ({ id, name, owner, updatedAt, isOwner, onRemoveClick: handleRemoveClick }: IItem) => (
     <Card className={styles.container}>
         <Link key={id} to={`/detail/${id}`} className={styles.link}>
-            <h1 className={styles.title}>{name}</h1>
+            <Text className={styles.title}>{name}</Text>
+            <Text>{owner.name}</Text>
         </Link>
-        <Text>{owner.name}</Text>
         <div className={styles.footer}>
             <Small>{format(updatedAt, 'ii.M.yyyy HH:mm')}</Small>
             {isOwner && <Button icon={CrossIcon} variant="danger" className={styles.deleteButton} onClick={handleRemoveClick} />}
