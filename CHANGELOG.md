@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.2.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.1.2...0.2.0) (2023-11-25)
+
+### Features
+
+-   animations ([#25](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/25)) ([aba5462](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/aba54620b639e15470233431a7a9aa7efa6a7aad))
+-   **dashboard:** add delete list ([#20](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/20)) ([02bec8c](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/02bec8cb4569966de2f60d6dc2afb1c97c3bb3de))
+-   **dashboard:** add filtering ([#21](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/21)) ([d3bdae0](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/d3bdae0ae7520c1ee174a0dc3c1bca4c7d440d5c))
+-   **dashboard:** add list form ([#23](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/23)) ([dc1554e](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/dc1554eea990c6ee0716e975e562857e9b303223))
+-   delete dialog ([#22](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/22)) ([217a510](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/217a5102f582e3c2092b12797192fde499623921))
+
+### Chores
+
+-   **deps-dev:** bump eslint from 8.53.0 to 8.54.0 ([#19](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/19)) ([94915d4](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/94915d487f0c86a1270a8f0072d6d789b36ab651))
+-   **deps-dev:** bump lint-staged from 15.0.2 to 15.1.0 ([#12](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/12)) ([2f3ccbc](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/2f3ccbcf1a21b800df4a3252e577a17bba16d5c8))
+-   **deps-dev:** bump prettier from 3.0.3 to 3.1.0 ([#13](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/13)) ([c16ede0](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/c16ede0076e2c874d5dacada40e908194bb2eefc))
+-   **deps-dev:** bump release-it and @release-it/conventional-changelog ([#10](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/10)) ([fe247da](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/fe247dabb08bbb0415f555cee0193f55e6d48e5b))
+-   **deps-dev:** bump typescript from 5.2.2 to 5.3.2 ([#16](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/16)) ([f90e940](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/f90e9409e5855b211919197e264d6dadaea418d7))
+-   **deps-dev:** bump vercel from 32.5.3 to 32.5.5 ([#17](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/17)) ([a351419](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/a3514198be66c460cd54a9fb59438e1f4a841e31))
+-   **deps:** bump i18next from 23.7.3 to 23.7.6 ([#14](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/14)) ([a28625d](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/a28625d20a41e98680c8a8d6f2bd8701b9547f09))
+-   **deps:** bump react-i18next from 13.4.0 to 13.4.1 ([#11](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/11)) ([25d6de7](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/25d6de73de1750060fc8b188a6f393cd99d0c4a1))
+-   **deps:** bump react-i18next from 13.4.1 to 13.5.0 ([#15](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/15)) ([14cb2df](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/14cb2dfa6113e802846007f6d135dcc558e1bef8))
+-   **deps:** bump react-icons from 4.11.0 to 4.12.0 ([#18](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/18)) ([c886468](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/c8864684a756a0867bff88d25ca01b8b7a69c020))
+
+### Code Refactoring
+
+-   item ([#24](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/24)) ([ab7b304](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/ab7b304d02e00b471d201b09727729715a7b3635))
+
 ## [0.1.2](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.1.1...0.1.2) (2023-11-13)
 
 ### Chores
