@@ -41,7 +41,7 @@ export const DashboardPage = () => {
     }, [reset, prompt]);
 
     return (
-        <div>
+        <>
             <Grid items={data} onItemRemove={remove} />
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
@@ -59,6 +59,6 @@ export const DashboardPage = () => {
                     </form>
                 )}
             </AddListDialog>
-        </div>
+        </>
     );
 };

@@ -30,12 +30,7 @@ export const Grid = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
         return isActive || isArchived;
     });
 
-    const handleRemoveClick = useCallback(
-        (id: string) => {
-            deletePrompt({ onConfirm: () => handleItemRemove(id) });
-        },
-        [handleItemRemove, deletePrompt],
-    );
+    const handleRemoveClick = useCallback((id: string) => deletePrompt({ onConfirm: () => handleItemRemove(id) }), [handleItemRemove, deletePrompt]);
 
     return (
         <div className={styles.container}>

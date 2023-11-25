@@ -29,6 +29,7 @@ export const useDashboardData = () => {
         async (data: { name: string }) => {
             try {
                 const result = await Api.addShoppingList({ name: data.name, owner: user });
+
                 await fetch();
 
                 return result;

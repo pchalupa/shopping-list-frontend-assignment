@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import { RxCross2 as CrossIcon } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
+import { Route } from 'router';
 
 import { Button } from '@components/Button';
 import { Card } from '@components/Card';
@@ -20,7 +21,7 @@ interface IItem {
 
 export const Item = ({ id, name, owner, updatedAt, isOwner, onRemoveClick: handleRemoveClick }: IItem) => (
     <Card className={styles.container}>
-        <Link key={id} to={`/detail/${id}`} className={styles.link}>
+        <Link key={id} to={`${Route.Detail}/${id}`} className={styles.link}>
             <Text className={styles.title}>{name}</Text>
             <Text>{owner.name}</Text>
         </Link>
