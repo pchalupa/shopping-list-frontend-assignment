@@ -6,7 +6,7 @@ export default i18n
     .use(Backend)
     .use(initReactI18next)
     .init({
-        lng: 'cs',
+        fallbackLng: ['cs', 'en'],
         interpolation: {
             escapeValue: false,
         },

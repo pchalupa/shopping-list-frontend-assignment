@@ -54,7 +54,7 @@ export const DashboardPage = () => {
                             error={formState.errors.name}
                         />
                         <div>
-                            <Button type="submit" text={t('save')} variant="success" />
+                            <Button type="submit" text={t('action.save')} variant="success" />
                         </div>
                     </form>
                 )}
