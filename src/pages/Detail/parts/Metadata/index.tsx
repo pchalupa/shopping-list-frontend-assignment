@@ -22,7 +22,7 @@ export const Metadata = ({ owner = '', members = [], onMemberAdd, onMemberRemove
         <Card className={styles.container}>
             <p className={styles.title}>{t('owner')}</p>
             <Text>{owner}</Text>
-            <p className={styles.title}>{t('members')}</p>
+            <p className={styles.title}>{t('member', { count: members.length })}</p>
             <div className={styles.members}>
                 {members.map(({ id, name }) => (
                     <Member key={id} id={id} name={name} isOwner={isOwner} onRemove={onMemberRemove} />

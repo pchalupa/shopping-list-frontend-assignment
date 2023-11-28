@@ -1,18 +1,28 @@
 {
+    "owner": "Vlastník",
+    "member_one": "Člen",
+    "member_few": "Členové",
+    "member_other": "Členové",
     "filter": {
         "active": "Aktivní",
         "archived": "Archivované",
         "all": "Vše"
     },
-    "emptyList": "Žádné položky",
-    "archive": "Archivovat",
-    "delete": "Smazat",
-    "save": "Uložit",
-    "owner": "Vlastník",
-    "members": "Členové",
-    "newItem": "Nová položka",
+    "action": {
+        "save": "Uložit",
+        "delete": "Smazat",
+        "archive": "Archivovat"
+    },
+    "validation": {
+        "required": "Vyplňte prosím toto pole"
+    },
+    "language": {
+        "cs": "Čeština",
+        "en": "Angličtina"
+    },
     "addMember": "Přidat člena",
+    "newItem": "Nová položka",
+    "emptyList": "Žádné položky",
     "confirmDeletion": "Potvrďte smazání",
-    "listName": "Jméno seznamu",
-    "required": "Vyplňte prosím toto pole"
+    "listName": "Jméno seznamu"
 }

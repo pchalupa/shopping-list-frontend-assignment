@@ -54,8 +54,8 @@ export const Header = ({
             </h1>
             {isOwner && (
                 <div className={styles.wrapper}>
-                    {!isArchived && <Button text={t('archive')} variant="warning" onClick={handleArchiveClick} />}
-                    <Button text={t('delete')} variant="danger" onClick={handleDeleteClick} />
+                    {!isArchived && <Button text={t('action.archive')} variant="warning" onClick={handleArchiveClick} />}
+                    <Button text={t('action.delete')} variant="danger" onClick={handleDeleteClick} />
                 </div>
             )}
         </div>

@@ -56,7 +56,7 @@ export const Grid = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
                 {({ onConfirm }) => (
                     <>
                         <Text>{t('confirmDeletion')}</Text>
-                        <Button variant="danger" text={t('delete')} onClick={onConfirm} />
+                        <Button variant="danger" text={t('action.delete')} onClick={onConfirm} />
                     </>
                 )}
             </DeleteDialog>

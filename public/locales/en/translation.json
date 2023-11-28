@@ -1,0 +1,28 @@
+{
+    "owner": "Owner",
+    "member_one": "Member",
+    "member_few": "Members",
+    "member_other": "Members",
+    "filter": {
+        "active": "Active",
+        "archived": "Archived",
+        "all": "All"
+    },
+    "action": {
+        "save": "Save",
+        "delete": "Delete",
+        "archive": "Archive"
+    },
+    "validation": {
+        "required": "This field is required"
+    },
+    "language": {
+        "cs": "Czech",
+        "en": "English"
+    },
+    "addMember": "Add memeber",
+    "newItem": "New item",
+    "emptyList": "Empty list",
+    "confirmDeletion": "Confirm deletion",
+    "listName": "List name"
+}
