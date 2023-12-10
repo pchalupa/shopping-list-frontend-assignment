@@ -3,7 +3,7 @@
     align-self: flex-start;
 }
 
-.titleWrapper {
+.title-wrapper {
     display: flex;
     align-items: center;
     column-gap: var(--spacing-medium);
