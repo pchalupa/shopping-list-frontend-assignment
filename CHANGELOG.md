@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.3.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.2.1...0.3.0) (2023-12-10)
+
+### Features
+
+-   language picker ([#32](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/32)) ([3950092](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/395009238971763eb1e6315731ef4cc1715f07f0))
+
+### Chores
+
+-   **deps-dev:** bump @types/react from 18.2.37 to 18.2.39 ([#29](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/29)) ([a301411](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/a3014112652c0d1dc47aaa0b3039665dbfd1c805))
+-   **deps-dev:** bump @types/react-dom from 18.2.15 to 18.2.17 ([#31](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/31)) ([61a1f5f](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/61a1f5ffc12bb19be346853d14d52772d861e614))
+-   **deps-dev:** bump @vitejs/plugin-react-swc from 3.4.1 to 3.5.0 ([#30](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/30)) ([ef5f395](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/ef5f395aca5ac745bfff804d5df7263fa2b5699b))
+-   **deps-dev:** bump eslint from 8.54.0 to 8.55.0 ([#35](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/35)) ([e831007](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/e831007c62e8b84aef914bf1d4e708b2c6cccadd))
+-   **deps-dev:** bump lint-staged from 15.1.0 to 15.2.0 ([#37](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/37)) ([ded3ca9](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/ded3ca908ecae4054d69a9a7ea48a7791f513346))
+-   **deps-dev:** bump vercel from 32.5.5 to 32.5.6 ([#28](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/28)) ([cbe1348](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/cbe1348cddf3e9654a95bb5a0dfa1e87ee42b053))
+-   **deps-dev:** bump vercel from 32.5.6 to 32.6.1 ([#33](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/33)) ([0def915](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/0def9157c3a88dac407d10b5b910ab4aa88a23a2))
+-   **deps-dev:** bump vite from 4.5.0 to 4.5.1 ([#38](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/38)) ([a8790ea](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/a8790ea0f9a55ece5cd685f94b569802fc39bd86))
+-   **deps:** bump i18next-http-backend from 2.4.1 to 2.4.2 ([#27](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/27)) ([b496daa](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/b496daaf605f38edc18b5890825674e61916dbda))
+-   **deps:** bump nanoid from 5.0.3 to 5.0.4 ([#36](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/36)) ([8a98df5](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/8a98df528e1d6f8b813103e0fd53e36814926624))
+-   **deps:** bump react-router-dom from 6.18.0 to 6.20.1 ([#34](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/34)) ([75d04a6](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/75d04a660bf8ea292e1ab2d515fd7a7d6f0c1bfb))
+-   init mock server ([#39](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/39)) ([18cb953](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/18cb953f97748f87cd6c550da09e31b779006758))
+
 ## [0.2.1](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.2.0...0.2.1) (2023-11-25)
 
 ### Bug Fixes
