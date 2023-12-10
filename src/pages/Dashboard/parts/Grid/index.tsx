@@ -15,10 +15,11 @@ import styles from './styles.module.css';
 
 interface IList {
     items?: Array<{ id: string; name: string; owner: { id: string; name: string }; updatedAt: number; archivedAt?: number }>;
-    onItemRemove: (id: string) => void;
+    onItemRemove: (id: string) => Promise<void>;
+    isLoading?: boolean;
 }
 
-export const Grid = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
+export const Grid = ({ items = [], onItemRemove: handleItemRemove, isLoading }: IList) => {
     const [filter, setFilter] = useState(criteria.at(0)?.value);
     const { user } = useUserContext();
     const { dialogRef: deleteDialogRef, prompt: deletePrompt } = useDialog({});
@@ -30,7 +31,10 @@ export const Grid = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
         return isActive || isArchived;
     });
 
-    const handleRemoveClick = useCallback((id: string) => deletePrompt({ onConfirm: () => handleItemRemove(id) }), [handleItemRemove, deletePrompt]);
+    const handleRemoveClick = useCallback(
+        (id: string) => deletePrompt({ onConfirmAsync: async () => handleItemRemove(id) }),
+        [handleItemRemove, deletePrompt],
+    );
 
     return (
         <div className={styles.container}>
@@ -53,10 +57,10 @@ export const Grid = ({ items = [], onItemRemove: handleItemRemove }: IList) => {
                 )}
             </div>
             <DeleteDialog dialogRef={deleteDialogRef}>
-                {({ onConfirm }) => (
+                {({ onConfirmAsync }) => (
                     <>
                         <Text>{t('confirmDeletion')}</Text>
-                        <Button variant="danger" text={t('action.delete')} onClick={onConfirm} />
+                        <Button variant="danger" text={t('action.delete')} isLoading={isLoading} onClick={onConfirmAsync} />
                     </>
                 )}
             </DeleteDialog>

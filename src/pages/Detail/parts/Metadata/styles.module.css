@@ -3,6 +3,12 @@
     align-self: flex-start;
 }
 
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: var(--spacing-medium);
+}
+
 .title {
     font-size: 1.25rem;
     font-weight: bold;
@@ -12,4 +18,8 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-medium);
+}
+
+.loader {
+    --size: 1.25rem;
 }

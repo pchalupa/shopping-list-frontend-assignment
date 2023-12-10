@@ -1,12 +1,12 @@
-import { type ShoppingList } from '.';
+import { type ShoppingList } from '../services/api';
 
 export const user = {
-    a: { id: 'a', name: 'Petr Novák' },
-    b: { id: 'b', name: 'Tomáš Novák' },
-    c: { id: 'c', name: 'Marta Nováková' },
+    a: { id: 'a', name: 'Petr Novák', token: 'token-c' },
+    b: { id: 'b', name: 'Tomáš Novák', token: 'token-a' },
+    c: { id: 'c', name: 'Marta Nováková', token: 'token-b' },
 };
 
-export const mock: ShoppingList[] = [
+export const data: ShoppingList[] = [
     {
         id: 'a',
         name: 'Drogerie',

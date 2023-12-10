@@ -22,7 +22,8 @@
             "@hooks/*": ["hooks/*"],
             "@services/*": ["services/*"],
             "@contexts/*": ["contexts/*"],
-            "@utils/*": ["utils/*"]
+            "@utils/*": ["utils/*"],
+            "@mocks/*": ["mocks/*"]
         }
     },
     "include": ["src", "vite.config.ts"]

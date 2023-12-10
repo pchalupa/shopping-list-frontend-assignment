@@ -34,3 +34,7 @@
 .danger {
     background-color: var(--color-surface-danger);
 }
+
+.loader {
+    --size: 1.25rem;
+}

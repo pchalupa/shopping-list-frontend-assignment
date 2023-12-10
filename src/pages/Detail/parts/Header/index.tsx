@@ -49,7 +49,14 @@ export const Header = ({
 
     return (
         <div className={styles.container}>
-            <h1 contentEditable={isOwner} {...register('name')} className={styles.title} onInput={handleInput} onBlur={handleBlur}>
+            <h1
+                contentEditable={isOwner}
+                {...register('name')}
+                suppressContentEditableWarning
+                className={styles.title}
+                onInput={handleInput}
+                onBlur={handleBlur}
+            >
                 {name}
             </h1>
             {isOwner && (
