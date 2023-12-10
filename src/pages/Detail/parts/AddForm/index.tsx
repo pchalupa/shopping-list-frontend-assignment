@@ -14,7 +14,7 @@ interface IAddForm {
 }
 
 const formSchema = z.object({
-    name: z.string().trim().min(1, { message: 'required' }),
+    name: z.string().trim().min(1, { message: 'validation.required' }),
 });
 
 type FormSchema = z.infer<typeof formSchema>;

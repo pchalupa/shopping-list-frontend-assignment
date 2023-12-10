@@ -20,9 +20,9 @@ export const LanguagePicker = () => {
 
     return (
         <form className={styles.container} onChange={handleLanguageChange}>
-            <select className={styles.select} {...register('language')}>
+            <select className={styles.select} {...register('language')} defaultValue={i18n.language}>
                 {i18n.languages.map((language) => (
-                    <option key={language} value={language} selected={language === i18n.language}>
+                    <option key={language} value={language}>
                         {t(`language.${language}`)}
                     </option>
                 ))}

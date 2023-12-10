@@ -1,36 +1,22 @@
 .container {
-    width: 3rem;
-    height: 3rem;
-    display: inline-block;
-    position: relative;
-}
+    --size: 3rem;
 
-.container::after,
-.container::before {
-    content: '';
-    box-sizing: border-box;
-    width: 3rem;
-    height: 3rem;
+    width: var(--size);
+    height: var(--size);
+    border: calc(var(--size) / 5.5) solid var(--color-text-secondary);
+    border-bottom-color: transparent;
     border-radius: 50%;
-    border: 2px solid var(--color-black);
-    position: absolute;
-    left: 0;
-    top: 0;
-    animation: animloader 2s linear infinite;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
-.container::after {
-    animation-delay: 1s;
-}
-
-@keyframes animloader {
+@keyframes rotation {
     0% {
-        transform: scale(0);
-        opacity: 1;
+        transform: rotate(0deg);
     }
 
     100% {
-        transform: scale(1);
-        opacity: 0;
+        transform: rotate(360deg);
     }
 }

@@ -11,38 +11,59 @@ import { Dialog as AddListDialog } from '@components/Dialog';
 import { useDialog } from '@components/Dialog/useDialog';
 import { TextInput } from '@components/TextInput';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useErrorHandler } from '@hooks/useErrorHandler';
+import * as Api from '@services/api';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Grid } from './parts/Grid';
 import styles from './styles.module.css';
-import { useDashboardData } from './useDashboardData';
 
 const formSchema = z.object({ name: z.string().min(1, { message: 'required' }) });
 
 type FormSchema = z.infer<typeof formSchema>;
 
 export const DashboardPage = () => {
-    const { data, add, remove } = useDashboardData();
-    const { dialogRef, prompt, close } = useDialog({});
-    const { register, handleSubmit, reset, formState } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
+    const { handleError } = useErrorHandler();
+    const queryClient = useQueryClient();
+    const { data } = useQuery({
+        queryKey: ['shoppingLists'],
+        queryFn: async () => Api.getShoppingLists(),
+    });
+    const { mutateAsync: addShoppingList, isPending: isAddingShoppingList } = useMutation<Api.ShoppingList, Error, { name: string }>({
+        mutationKey: ['shoppingList'],
+        mutationFn: async (data) => Api.addShoppingList(data),
+        onSettled: async () => queryClient.invalidateQueries({ queryKey: ['shoppingLists'] }),
+        onSuccess: async (data) => queryClient.setQueryData(['shoppingList', data.id], data),
+        onError: handleError,
+    });
+    const { mutateAsync: removeShoppingList, isPending: isRemovingShoppingList } = useMutation<void, Error, string>({
+        mutationKey: ['shoppingList'],
+        mutationFn: async (data) => Api.removeShoppingList(data),
+        onSettled: async () => queryClient.invalidateQueries({ queryKey: ['shoppingLists'] }),
+        onSuccess: async (_data, variables) => queryClient.removeQueries({ queryKey: ['shoppingList', variables], exact: true }),
+        onError: handleError,
+    });
+    const { dialogRef, prompt: promptName, close: closeModal } = useDialog({});
+    const { register, handleSubmit, reset: resetForm, formState } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
     const navigate = useNavigate();
     const { t } = useTranslation();
 
     const handleFormSubmit = handleSubmit(async (data) => {
-        const newList = await add(data);
+        const newList = await addShoppingList(data);
 
-        reset();
-        close();
+        resetForm();
+        closeModal();
         navigate(`${Route.Detail}/${newList?.id}`);
     });
 
     const handleAddButtonClick = useCallback(() => {
-        reset();
-        prompt();
-    }, [reset, prompt]);
+        resetForm();
+        promptName();
+    }, [resetForm, promptName]);
 
     return (
         <>
-            <Grid items={data} onItemRemove={remove} />
+            <Grid items={data} isLoading={isRemovingShoppingList} onItemRemove={removeShoppingList} />
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
@@ -54,7 +75,7 @@ export const DashboardPage = () => {
                             error={formState.errors.name}
                         />
                         <div>
-                            <Button type="submit" text={t('action.save')} variant="success" />
+                            <Button type="submit" text={t('action.save')} variant="success" isLoading={isAddingShoppingList} />
                         </div>
                     </form>
                 )}

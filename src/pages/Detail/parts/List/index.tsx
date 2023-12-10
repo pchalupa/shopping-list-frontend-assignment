@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Filter } from '@components/Filter';
+import { Loader } from '@components/Loader';
 import { Small } from '@components/Small';
 
 import { AddForm } from '../AddForm';
@@ -14,6 +15,7 @@ interface IList {
     onItemClick: (id: string) => void;
     onItemAdd: (item: { name: string }) => void;
     onItemDeleteClick: (id: string) => void;
+    isLoading?: boolean;
 }
 
 export const List = ({
@@ -21,6 +23,7 @@ export const List = ({
     onItemClick: handleItemSolveClick,
     onItemDeleteClick: handleItemDeleteClick,
     onItemAdd: handleItemAdd,
+    isLoading,
 }: IList) => {
     const [filter, setFilter] = useState(criteria.at(0)?.value);
     const { t } = useTranslation();
@@ -46,6 +49,7 @@ export const List = ({
                 )}
             </div>
             <AddForm placeholder={t('newItem')} onAdd={handleItemAdd} />
+            {isLoading && <Loader className={styles.loader} />}
         </div>
     );
 };

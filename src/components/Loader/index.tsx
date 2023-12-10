@@ -6,4 +6,4 @@ interface ILoader {
     className?: string;
 }
 
-export const Loader = ({ className }: ILoader) => <div className={classNames(styles.container, className)} />;
+export const Loader = ({ className }: ILoader) => <div className={classNames(className, styles.container)} />;

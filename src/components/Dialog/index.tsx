@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 export type Actions = { prompt?: () => void; close?: () => void };
 
-export type Options = { onConfirm?: () => void; onCancel?: () => void };
+export type Options = { onConfirm?: () => void; onConfirmAsync?: () => Promise<void>; onCancel?: () => void };
 
 interface IDialog {
     children: (options: Options) => React.ReactNode;
@@ -28,6 +28,11 @@ export const Dialog = ({ children, className, dialogRef }: IDialog) => {
         close();
     }, [dialogRef, close]);
 
+    const handleConfirmAsync = useCallback(async () => {
+        if (dialogRef.current.onConfirmAsync) await dialogRef.current.onConfirmAsync();
+        close();
+    }, [dialogRef, close]);
+
     const handleCancel = useCallback(() => {
         if (dialogRef.current.onCancel) dialogRef.current.onCancel();
         close();
@@ -42,7 +47,9 @@ export const Dialog = ({ children, className, dialogRef }: IDialog) => {
         <dialog ref={ref} className={styles.dialog}>
             <div className={styles.container}>
                 <Button icon={CrossIcon} className={styles.closeButton} onClick={handleCancel} />
-                <div className={classNames(styles.wrapper, className)}>{children({ onConfirm: handleConfirm, onCancel: handleCancel })}</div>
+                <div className={classNames(styles.wrapper, className)}>
+                    {children({ onConfirm: handleConfirm, onConfirmAsync: handleConfirmAsync, onCancel: handleCancel })}
+                </div>
             </div>
         </dialog>
     );

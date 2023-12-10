@@ -11,3 +11,9 @@
     flex-direction: column;
     row-gap: var(--spacing-medium);
 }
+
+.loader {
+    --size: 2rem;
+
+    align-self: center;
+}
