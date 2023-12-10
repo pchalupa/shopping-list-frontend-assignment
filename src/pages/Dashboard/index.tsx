@@ -63,7 +63,7 @@ export const DashboardPage = () => {
 
     return (
         <>
-            <Grid items={data} isRemoving={isRemovingShoppingList} onItemRemove={removeShoppingList} />
+            <Grid items={data} isLoading={isRemovingShoppingList} onItemRemove={removeShoppingList} />
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
