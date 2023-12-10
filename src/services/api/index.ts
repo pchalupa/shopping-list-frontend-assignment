@@ -1,10 +1,9 @@
-import { nanoid } from 'nanoid';
-
-import { mock } from './index.mock';
+import { getCurrentUser } from '@services/idp';
 
 export enum ErrorCode {
     NotFound = 'E01',
     Conflict = 'E02',
+    BadRequest = 'E03',
 }
 
 export type ShoppingList = {
@@ -19,129 +18,118 @@ export type ShoppingList = {
     deletedAt?: number;
 };
 
-export async function getShoppingLists(userId: string): Promise<ShoppingList[]> {
-    const result =
-        mock.filter(({ owner, members, deletedAt }) => !deletedAt && (owner.id === userId || members.some(({ id }) => id === userId))) ?? [];
+export async function getShoppingLists(): Promise<ShoppingList[]> {
+    const response = await fetcher({ url: '/shopping-lists', method: 'GET' });
 
-    return result;
-}
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList[] = await response.json();
 
-export async function addShoppingList({ name, owner }: Pick<ShoppingList, 'name' | 'owner'>): Promise<ShoppingList> {
-    const currentTime = Date.now();
-    const list = {
-        id: nanoid(),
-        name,
-        owner,
-        members: [],
-        items: [],
-        createdAt: currentTime,
-        updatedAt: currentTime,
-    };
-
-    mock.push(list);
-
-    return list;
+    return data;
 }
 
 export async function getShoppingList(id: string): Promise<ShoppingList> {
-    const result = mock.find(({ id: listId }) => listId === id);
+    const response = await fetcher({ url: `/shopping-lists/${id}`, method: 'GET' });
 
-    if (!result) throw new Error(ErrorCode.NotFound);
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    return result;
+    if (!data) throw new Error(ErrorCode.NotFound);
+
+    return data;
 }
 
-export async function updateShoppingListName(id: string, name: string) {
-    const listIndex = mock.findIndex(({ id: listId }) => listId === id);
-    const updatedAt = new Date();
+export async function addShoppingList({ name }: Pick<ShoppingList, 'name'>): Promise<ShoppingList> {
+    const response = await fetcher({ url: `/shopping-lists`, method: 'POST', body: { name } });
 
-    mock[listIndex].name = name;
-    mock[listIndex].updatedAt = updatedAt.getTime();
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    return mock[listIndex];
+    return data;
 }
 
-export async function removeShoppingList(id: string) {
-    const listIndex = mock.findIndex(({ id: listId }) => listId === id);
-    const deletedAt = new Date();
+export async function updateShoppingListName(id: string, name: string): Promise<ShoppingList> {
+    const response = await fetcher({ url: `/shopping-lists/${id}`, method: 'PUT', body: { name } });
 
-    mock[listIndex].deletedAt = deletedAt.getTime();
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
+
+    return data;
+}
+
+export async function removeShoppingList(id: string): Promise<void> {
+    const response = await fetcher({ url: `/shopping-lists/${id}`, method: 'DELETE' });
+
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
 }
 
 export async function archiveShoppingList(id: string) {
-    const listIndex = mock.findIndex(({ id: listId }) => listId === id);
     const archivedAt = new Date();
+    const response = await fetcher({ url: `/shopping-lists/${id}`, method: 'PUT', body: { archivedAt: archivedAt.getTime() } });
 
-    if (listIndex < 0) throw new Error(ErrorCode.NotFound);
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    mock[listIndex].archivedAt = archivedAt.getTime();
-
-    return mock[listIndex];
+    return data;
 }
 
-export async function addShoppingListItem(shoppingListId: string, item: { name: string }) {
-    const listIndex = mock.findIndex(({ id }) => id === shoppingListId);
-    const updatedAt = new Date();
+export async function addShoppingListItem(listId: string, item: { name: string }): Promise<ShoppingList> {
+    const response = await fetcher({ url: `/shopping-lists/${listId}/items`, method: 'POST', body: { name: item.name } });
 
-    if (listIndex < 0) throw new Error(ErrorCode.NotFound);
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    mock[listIndex].items.push({ id: nanoid(), solvedAt: undefined, deletedAt: undefined, ...item });
-    mock[listIndex].updatedAt = updatedAt.getTime();
-
-    return mock[listIndex];
+    return data;
 }
 
-export async function solveShoppingListItem(shoppingListId: string, itemId: string) {
-    const listIndex = mock.findIndex(({ id }) => id === shoppingListId);
-    const updatedAt = new Date();
+export async function solveShoppingListItem(shoppingListId: string, itemId: string): Promise<ShoppingList> {
+    const solvedAt = new Date();
+    const response = await fetcher({
+        url: `/shopping-lists/${shoppingListId}/items/${itemId}`,
+        method: 'PUT',
+        body: { solvedAt: solvedAt.getTime() },
+    });
 
-    if (listIndex < 0) throw new Error(ErrorCode.NotFound);
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    const itemIndex = mock[listIndex].items.findIndex(({ id }) => id === itemId);
-
-    if (itemIndex < 0) throw new Error(ErrorCode.NotFound);
-
-    const solvedDate = new Date();
-
-    mock[listIndex].items[itemIndex].solvedAt = solvedDate.getTime();
-    mock[listIndex].updatedAt = updatedAt.getTime();
-
-    return mock[listIndex];
+    return data;
 }
 
-export async function removeShoppingListItem(shoppingListId: string, itemId: string) {
-    const listIndex = mock.findIndex(({ id }) => id === shoppingListId);
-    const updatedAt = new Date();
+export async function removeShoppingListItem(shoppingListId: string, itemId: string): Promise<ShoppingList> {
+    const response = await fetcher({
+        url: `/shopping-lists/${shoppingListId}/items/${itemId}`,
+        method: 'DELETE',
+    });
 
-    if (listIndex < 0) throw new Error(ErrorCode.NotFound);
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    mock[listIndex].items = mock[listIndex].items.filter(({ id }) => id !== itemId);
-    mock[listIndex].updatedAt = updatedAt.getTime();
-
-    return mock[listIndex];
+    return data;
 }
 
-export async function addShoppingListMember(shoppingListId: string, member: { name: string }) {
-    const listIndex = mock.findIndex(({ id }) => id === shoppingListId);
-    const updatedAt = new Date();
+export async function addShoppingListMember(listId: string, member: { name: string }) {
+    const response = await fetcher({ url: `/shopping-lists/${listId}/members`, method: 'POST', body: member });
 
-    if (listIndex < 0) throw new Error(ErrorCode.NotFound);
-    if (mock[listIndex].members.findIndex(({ name }) => name === member.name) >= 0) throw new Error(ErrorCode.Conflict);
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    mock[listIndex].members.push({ id: nanoid(), ...member });
-    mock[listIndex].updatedAt = updatedAt.getTime();
-
-    return mock[listIndex];
+    return data;
 }
 
-export async function removeShoppingListMember(shoppingListId: string, memberId: string) {
-    const listIndex = mock.findIndex(({ id }) => id === shoppingListId);
-    const updatedAt = new Date();
+export async function removeShoppingListMember(listId: string, memberId: string) {
+    const response = await fetcher({ url: `/shopping-lists/${listId}/members/${memberId}`, method: 'DELETE' });
 
-    if (listIndex < 0) throw new Error(ErrorCode.NotFound);
+    if (!response.ok) throw new Error(ErrorCode.BadRequest);
+    const data: ShoppingList = await response.json();
 
-    mock[listIndex].members = mock[listIndex].members.filter(({ id }) => id !== memberId);
-    mock[listIndex].updatedAt = updatedAt.getTime();
+    return data;
+}
 
-    return mock[listIndex];
+async function fetcher(options: { url: string; method: 'GET' | 'POST' | 'PUT' | 'DELETE'; body?: Record<string, unknown> }) {
+    const { token } = getCurrentUser();
+    const headers = new Headers({ authorization: token });
+    const body = JSON.stringify(options.body);
+    const response = await fetch(`${import.meta.env.VITE_API_URL}${options.url}`, { method: options.method, headers, body });
+
+    return response;
 }
