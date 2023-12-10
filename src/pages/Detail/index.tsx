@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Route } from 'router';
@@ -102,9 +102,12 @@ export const DetailPage = () => {
         navigate('/');
     }, [archiveShoppingList, navigate]);
 
+    useEffect(() => {
+        if (!isLoading && !data) navigate(Route.Dashboard);
+        if (!isMember && !isOwner) navigate(Route.Dashboard);
+    }, [data, isLoading, isOwner, isMember, navigate]);
+
     if (isLoading) return <Loader className={styles.loader} />;
-    if (!isLoading && !data) navigate(Route.Dashboard);
-    if (!isMember && !isOwner) navigate(Route.Dashboard);
 
     return (
         <div className={styles.container}>
