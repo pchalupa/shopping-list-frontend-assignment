@@ -1,7 +1,7 @@
 .dialog {
     border-radius: var(--radius-primary);
     border-style: 1px solid var(--color-black);
-    background-color: var(--color-surface-secondary);
+    background-color: var(--color-surface-primary);
     padding: var(--spacing-larger);
     box-shadow: 0 0 10px 2px var(--color-gray);
     min-width: 30%;
@@ -9,7 +9,7 @@
 }
 
 .dialog::backdrop {
-    background-color: gray;
+    background-color: rgba(0 0 0 25%);
     opacity: 0.75;
 }
 
