@@ -24,5 +24,10 @@
     "newItem": "Nová položka",
     "emptyList": "Žádné položky",
     "confirmDeletion": "Potvrďte smazání",
-    "listName": "Jméno seznamu"
+    "listName": "Jméno seznamu",
+    "error": {
+        "E01": "Objekt nenalezen",
+        "E02": "Konflikt",
+        "E03": "Špatný požadavek"
+    }
 }

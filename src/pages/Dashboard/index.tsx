@@ -28,6 +28,7 @@ export const DashboardPage = () => {
     const { data } = useQuery({
         queryKey: ['shoppingLists'],
         queryFn: async () => Api.getShoppingLists(),
+        throwOnError: true,
     });
     const { mutateAsync: addShoppingList, isPending: isAddingShoppingList } = useMutation<Api.ShoppingList, Error, { name: string }>({
         mutationKey: ['shoppingList'],

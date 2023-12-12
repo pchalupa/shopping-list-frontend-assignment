@@ -24,5 +24,10 @@
     "newItem": "New item",
     "emptyList": "Empty list",
     "confirmDeletion": "Confirm deletion",
-    "listName": "List name"
+    "listName": "List name",
+    "error": {
+        "E01": "Not found",
+        "E02": "Conflict",
+        "E03": "Bad request"
+    }
 }

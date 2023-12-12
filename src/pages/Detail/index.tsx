@@ -29,6 +29,7 @@ export const DetailPage = () => {
         queryKey: ['shoppingList', id],
         queryFn: async () => Api.getShoppingList(id),
         initialData: () => queryClient.getQueryData<Api.ShoppingList[]>(['shoppingLists'])?.find((item) => item.id === id),
+        throwOnError: true,
     });
     const { mutateAsync: updateName } = useMutation<Api.ShoppingList, Error, string>({
         mutationKey: ['shoppingList', id],
