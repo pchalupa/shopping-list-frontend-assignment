@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.3.0...0.4.0) (2023-12-12)
+
+### Features
+
+-   toast ([#45](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/45)) ([673d84d](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/673d84d1131f38ddeb416d04eacfa830fbb4b8eb))
+
+### Chores
+
+-   **deps-dev:** bump cspell from 8.0.0 to 8.1.3 ([#40](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/40)) ([1b12473](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/1b124737b9859a894041fbe73c0040f83cf94b57))
+-   **deps-dev:** bump eslint-config-prettier from 9.0.0 to 9.1.0 ([#44](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/44)) ([61cf513](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/61cf513fa2ccfc4ce70c884391b3ef9d44596e2e))
+-   **deps-dev:** bump release-it from 17.0.0 to 17.0.1 ([#41](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/41)) ([339c3d5](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/339c3d587eafb7391c6fd9447fe646fc178958aa))
+
 ## [0.3.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.2.1...0.3.0) (2023-12-10)
 
 ### Features
