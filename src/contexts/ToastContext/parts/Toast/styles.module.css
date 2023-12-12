@@ -15,14 +15,12 @@
     opacity: 0;
     cursor: pointer;
     z-index: 10000;
-
     transition: var(--animation-speed-fast) ease-out;
 }
 
 .visible {
     bottom: 5%;
     opacity: 1;
-
     transition: var(--animation-speed-fast) ease-in;
 }
 
