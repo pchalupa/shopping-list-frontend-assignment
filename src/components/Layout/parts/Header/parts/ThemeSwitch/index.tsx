@@ -4,7 +4,7 @@ import { z } from 'zod';
 
 import { Button } from '@components/Button';
 
-const ATRIBUTE = 'data-theme';
+const ATTRIBUTE = 'data-theme';
 
 enum Theme {
     Light = 'light',
@@ -17,7 +17,7 @@ const themeIcon = {
 };
 
 const themeSchema = z.nativeEnum(Theme);
-const persistedTheme = themeSchema.safeParse(window.localStorage.getItem(ATRIBUTE));
+const persistedTheme = themeSchema.safeParse(window.localStorage.getItem(ATTRIBUTE));
 
 document.addEventListener('DOMContentLoaded', () => {
     if (persistedTheme.success) document.documentElement.setAttribute('data-theme', persistedTheme.data);
@@ -32,8 +32,8 @@ export const ThemeSwitch = () => {
     };
 
     useEffect(() => {
-        document.documentElement.setAttribute(ATRIBUTE, theme);
-        window.localStorage.setItem(ATRIBUTE, theme);
+        document.documentElement.setAttribute(ATTRIBUTE, theme);
+        window.localStorage.setItem(ATTRIBUTE, theme);
     }, [theme]);
 
     return <Button icon={themeIcon[theme]} onClick={themeSwitch} />;
