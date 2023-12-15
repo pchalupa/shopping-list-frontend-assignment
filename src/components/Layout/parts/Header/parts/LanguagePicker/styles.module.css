@@ -10,4 +10,6 @@
     min-width: 7rem;
     font-size: 0.75rem;
     font-weight: normal;
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-primary);
 }

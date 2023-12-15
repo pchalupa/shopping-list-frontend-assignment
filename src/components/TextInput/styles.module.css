@@ -9,6 +9,8 @@
     padding: var(--spacing-medium);
     border-radius: var(--radius-primary);
     border-color: inherit;
+    background-color: var(--color-surface-secondary);
+    color: var(--color-text-primary);
 }
 
 .error {
