@@ -3,7 +3,6 @@
     justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: var(--spacing-large);
-    row-gap: var(--spacing-medium);
+    gap: var(--spacing-medium) var(--spacing-large);
     padding: var(--spacing-large) 0;
 }
