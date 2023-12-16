@@ -3,7 +3,7 @@
     flex: 1.5 0.75 0;
     flex-direction: column;
     row-gap: var(--spacing-large);
-    min-width: 20rem;
+    min-width: 15rem;
 }
 
 .list {
