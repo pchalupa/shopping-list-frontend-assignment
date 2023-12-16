@@ -9,7 +9,7 @@
 
 .container:hover {
     transform: translate(-0.1rem, -0.1rem);
-    box-shadow: 0.5rem 0.5rem 1rem var(--color-gray);
+    box-shadow: 0.5rem 0.5rem 1rem var(--color-shadow-primary);
 }
 
 .link {
