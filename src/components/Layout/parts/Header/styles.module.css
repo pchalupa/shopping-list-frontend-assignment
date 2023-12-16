@@ -1,6 +1,8 @@
 .container {
     display: flex;
     justify-content: flex-end;
-    column-gap: var(--spacing-large);
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-medium) var(--spacing-large);
     padding: var(--spacing-large) 0;
 }
