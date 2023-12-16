@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.4.0...0.5.0) (2023-12-16)
+
+### Features
+
+-   darkmode ([#46](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/46)) ([230abc1](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/230abc1db3cf1edaa784752b7941dfd657152793))
+
+### Bug Fixes
+
+-   responsiveness ([#47](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/47)) ([47cddc3](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/47cddc3c3a2f3cee6a5045928bca977bce23f57c))
+
+### Chores
+
+-   **deps:** bump @tanstack/react-query-devtools from 5.13.4 to 5.13.5 ([#43](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/43)) ([e4d9b8d](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/e4d9b8d852a3826504f879c608975468edd38eaf))
+-   **deps:** bump i18next from 23.7.6 to 23.7.8 ([#42](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/42)) ([30cfc17](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/30cfc174fad92b139db0cf0e02dc39924d1c8c98))
+
 ## [0.4.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.3.0...0.4.0) (2023-12-12)
 
 ### Features
