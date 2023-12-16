@@ -3,12 +3,13 @@
 
     width: var(--size);
     height: var(--size);
-    border: calc(var(--size) / 5.5) solid var(--color-text-secondary);
+    border: calc(var(--size) / 5.5) solid var(--color-text-primary);
     border-bottom-color: transparent;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
+    opacity: 0.9;
 }
 
 @keyframes rotation {
