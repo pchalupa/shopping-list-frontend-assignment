@@ -5,6 +5,7 @@ import { Button } from '@components/Button';
 import { Dialog as DeleteDialog } from '@components/Dialog';
 import { useDialog } from '@components/Dialog/useDialog';
 import { Filter } from '@components/Filter';
+import { Loader } from '@components/Loader';
 import { Small } from '@components/Small';
 import { Text } from '@components/Text';
 import { useUserContext } from '@contexts/UserContext/useUserContext';
@@ -17,9 +18,10 @@ interface IList {
     items?: Array<{ id: string; name: string; owner: { id: string; name: string }; updatedAt: number; archivedAt?: number }>;
     onItemRemove: (id: string) => Promise<void>;
     isLoading?: boolean;
+    isRemoving?: boolean;
 }
 
-export const Grid = ({ items = [], onItemRemove: handleItemRemove, isLoading }: IList) => {
+export const Grid = ({ items = [], onItemRemove: handleItemRemove, isLoading, isRemoving }: IList) => {
     const [filter, setFilter] = useState(criteria.at(0)?.value);
     const { user } = useUserContext();
     const { dialogRef: deleteDialogRef, prompt: deletePrompt } = useDialog({});
@@ -39,6 +41,7 @@ export const Grid = ({ items = [], onItemRemove: handleItemRemove, isLoading }: 
     return (
         <div className={styles.container}>
             <Filter criteria={criteria} active={filter} onChange={setFilter} />
+            {isLoading && <Loader className={styles.loader} />}
             <div className={styles.wrapper}>
                 {data.length ? (
                     data.map(({ id, name, owner, updatedAt }) => (
@@ -60,7 +63,7 @@ export const Grid = ({ items = [], onItemRemove: handleItemRemove, isLoading }: 
                 {({ onConfirmAsync }) => (
                     <>
                         <Text>{t('confirmDeletion')}</Text>
-                        <Button variant="danger" text={t('action.delete')} isLoading={isLoading} onClick={onConfirmAsync} />
+                        <Button variant="danger" text={t('action.delete')} isLoading={isRemoving} onClick={onConfirmAsync} />
                     </>
                 )}
             </DeleteDialog>
