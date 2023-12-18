@@ -25,7 +25,7 @@ type FormSchema = z.infer<typeof formSchema>;
 export const DashboardPage = () => {
     const { handleError } = useErrorHandler();
     const queryClient = useQueryClient();
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['shoppingLists'],
         queryFn: async () => Api.getShoppingLists(),
         throwOnError: true,
@@ -64,7 +64,7 @@ export const DashboardPage = () => {
 
     return (
         <>
-            <Grid items={data} isLoading={isRemovingShoppingList} onItemRemove={removeShoppingList} />
+            <Grid items={data} isLoading={isLoading} isRemoving={isRemovingShoppingList} onItemRemove={removeShoppingList} />
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
