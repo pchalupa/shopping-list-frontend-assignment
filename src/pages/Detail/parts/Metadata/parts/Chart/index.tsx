@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { onThemeChange } from '@services/theme';
 
+import { OPTIONS } from './index.preset';
 import { getColors } from './index.utils';
 import styles from './style.module.css';
 
@@ -30,7 +31,6 @@ export const Chart = ({ solved, pending }: IPlot) => {
         }),
         [t, solved, pending, colors],
     );
-    const options = useMemo(() => ({ plugins: { legend: { onClick: () => undefined } } }), []);
 
     useEffect(() => {
         const unsubscribe = onThemeChange(() => setColors(getColors()));
@@ -40,5 +40,5 @@ export const Chart = ({ solved, pending }: IPlot) => {
         };
     }, []);
 
-    return <div className={styles.container}>{(solved > 0 || pending > 0) && <Pie data={data} options={options} className={styles.chart} />}</div>;
+    return <div className={styles.container}>{(solved > 0 || pending > 0) && <Pie data={data} options={OPTIONS} className={styles.chart} />}</div>;
 };
