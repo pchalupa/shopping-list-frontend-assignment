@@ -5,6 +5,7 @@ import { Loader } from '@components/Loader';
 import { Text } from '@components/Text';
 
 import { AddForm } from '../AddForm';
+import { Chart } from './parts/Chart';
 import { Member } from './parts/Member';
 import styles from './styles.module.css';
 
@@ -15,9 +16,10 @@ interface IMetadata {
     onMemberRemove: (id: string) => void;
     isOwner: boolean;
     isLoading?: boolean;
+    stats?: { solved: number; pending: number };
 }
 
-export const Metadata = ({ owner = '', members = [], onMemberAdd, onMemberRemove, isOwner, isLoading }: IMetadata) => {
+export const Metadata = ({ owner = '', members = [], onMemberAdd, onMemberRemove, stats, isOwner, isLoading }: IMetadata) => {
     const { t } = useTranslation();
 
     return (
@@ -34,6 +36,7 @@ export const Metadata = ({ owner = '', members = [], onMemberAdd, onMemberRemove
                 ))}
             </div>
             {isOwner && <AddForm placeholder={t('addMember')} onAdd={onMemberAdd} />}
+            {stats && <Chart pending={stats.pending} solved={stats.solved} />}
         </Card>
     );
 };

@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { RxPlus as PlusIcon } from 'react-icons/rx';
@@ -62,45 +62,9 @@ export const DashboardPage = () => {
         promptName();
     }, [resetForm, promptName]);
 
-    console.log();
-
-    const chartData = [
-        {
-            data:
-                data?.reduce((res, curr) => {
-                    res.push({ primary: curr.name, secondary: curr.items.length });
-                    return res;
-                }, []) ?? [],
-        },
-    ];
-    const primaryAxis = useMemo<AxisOptions<(typeof chartData)[number]['data'][number]>>(
-        () => ({
-            getValue: (datum) => datum?.primary,
-        }),
-        [],
-    );
-
-    const secondaryAxes = useMemo<Array<AxisOptions<(typeof chartData)[number]['data'][number]>>>(
-        () => [
-            {
-                getValue: (datum) => datum?.secondary,
-            },
-        ],
-        [],
-    );
-
     return (
         <>
             <Grid items={data} isLoading={isLoading} isRemoving={isRemovingShoppingList} onItemRemove={removeShoppingList} />
-            {!isLoading && (
-                <Chart
-                    options={{
-                        data: chartData,
-                        primaryAxis,
-                        secondaryAxes,
-                    }}
-                />
-            )}
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (

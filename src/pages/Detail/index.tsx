@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Route } from 'router';
@@ -89,6 +89,19 @@ export const DetailPage = () => {
     });
     const isOwner = data?.owner.id === user.id;
     const isMember = data?.members.some(({ id }) => id === user.id);
+    const stats = useMemo(
+        () =>
+            data?.items.reduce<{ solved: number; pending: number }>(
+                (result, item) => {
+                    if (item.solvedAt) result.solved += 1;
+                    else if (!item.deletedAt) result.pending += 1;
+
+                    return result;
+                },
+                { solved: 0, pending: 0 },
+            ),
+        [data],
+    );
 
     const { dialogRef: deleteDialogRef, prompt: promptToDelete } = useDialog({
         async onConfirmAsync() {
@@ -133,6 +146,7 @@ export const DetailPage = () => {
                     members={data?.members}
                     isOwner={isOwner}
                     isLoading={isAddingMember || isRemovingMember}
+                    stats={stats}
                     onMemberAdd={addMember}
                     onMemberRemove={removeMember}
                 />

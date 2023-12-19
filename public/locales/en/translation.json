@@ -29,5 +29,7 @@
         "E01": "Not found",
         "E02": "Conflict",
         "E03": "Bad request"
-    }
+    },
+    "solved": "Solved",
+    "pending": "Pending"
 }
