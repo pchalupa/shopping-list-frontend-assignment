@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.6.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.5.0...0.6.0) (2023-12-19)
+
+### Features
+
+-   **detail:** add pie chart ([#54](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/54)) ([b01a1ee](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/b01a1eeced7f49bbbf654c60cc4a9739df5491d9))
+
+### Bug Fixes
+
+-   **dashboard:** add loading ([#48](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/48)) ([2e3c8fc](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/2e3c8fcc70bcd7f33f46baebaf97fb42ad192e13))
+
+### Chores
+
+-   **deps-dev:** bump vite from 4.5.1 to 5.0.10 ([#53](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/53)) ([8b72209](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/8b722092b3714d417837fd421e88af1368bcaf31))
+-   **deps:** bump i18next from 23.7.8 to 23.7.11 ([#50](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/50)) ([0099a70](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/0099a70e91e0c86bae8b9e2a8484ea9ef1160855))
+-   **deps:** bump msw from 2.0.10 to 2.0.11 ([#51](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/51)) ([63e51f3](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/63e51f3801020ce4f8f3b7b58e234ad71ee21c25))
+-   **deps:** bump react-hook-form from 7.48.2 to 7.49.2 ([#49](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/49)) ([ba69607](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/ba696075083814853f1c0ae3a513b9cde4779d6b))
+-   update mock sw ([55eaa9b](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/55eaa9bff3df411e3a61969f8bfc0f73e101bcd6))
+
 ## [0.5.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.4.0...0.5.0) (2023-12-16)
 
 ### Features
