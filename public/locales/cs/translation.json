@@ -29,5 +29,7 @@
         "E01": "Objekt nenalezen",
         "E02": "Konflikt",
         "E03": "Špatný požadavek"
-    }
+    },
+    "solved": "Vyřešené",
+    "pending": "Zbývající"
 }

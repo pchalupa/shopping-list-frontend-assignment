@@ -2,3 +2,4 @@ pchalupa
 hookform
 tanstack
 transferrables
+chartjs
