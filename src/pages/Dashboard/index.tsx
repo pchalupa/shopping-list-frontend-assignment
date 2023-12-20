@@ -75,7 +75,7 @@ export const DashboardPage = () => {
     return (
         <>
             <Grid items={data} isLoading={isLoading} isRemoving={isRemovingShoppingList} onItemRemove={removeShoppingList} />
-            <Chart stats={stats} />
+            {Boolean(stats?.length) && <Chart stats={stats} />}
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
