@@ -1,12 +1,11 @@
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { useTranslation } from 'react-i18next';
 
-import { onThemeChange } from '@services/theme';
+import { useTheme } from '@services/theme/useTheme';
 
-import { OPTIONS } from './index.preset';
-import { getColors } from './index.utils';
+import { OPTIONS, PENDING_COLOR_TOKEN, SOLVED_COLOR_TOKEN } from './index.preset';
 import styles from './style.module.css';
 
 interface IPlot {
@@ -17,7 +16,7 @@ interface IPlot {
 ChartJS.register(ArcElement, Legend, Tooltip);
 
 export const Chart = ({ solved, pending }: IPlot) => {
-    const [colors, setColors] = useState<string[]>(getColors());
+    const colors = useTheme(SOLVED_COLOR_TOKEN, PENDING_COLOR_TOKEN);
     const { t } = useTranslation();
     const data = useMemo(
         () => ({
@@ -31,14 +30,6 @@ export const Chart = ({ solved, pending }: IPlot) => {
         }),
         [t, solved, pending, colors],
     );
-
-    useEffect(() => {
-        const unsubscribe = onThemeChange(() => setColors(getColors()));
-
-        return () => {
-            unsubscribe();
-        };
-    }, []);
 
     return <div className={styles.container}>{(solved > 0 || pending > 0) && <Pie data={data} options={OPTIONS} className={styles.chart} />}</div>;
 };

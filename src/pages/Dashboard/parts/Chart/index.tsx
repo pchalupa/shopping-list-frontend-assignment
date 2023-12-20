@@ -1,12 +1,11 @@
 import { BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Tooltip } from 'chart.js';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { useTranslation } from 'react-i18next';
 
-import { onThemeChange } from '@services/theme';
+import { useTheme } from '@services/theme/useTheme';
 
-import { OPTIONS } from './index.preset';
-import { getColors } from './index.utils';
+import { ALL_COLOR_TOKEN, OPTIONS, SOLVED_COLOR_TOKEN } from './index.preset';
 import styles from './styles.module.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
@@ -16,7 +15,7 @@ interface IChart {
 }
 
 export const Chart = ({ stats }: IChart) => {
-    const [colors, setColors] = useState<string[]>(getColors());
+    const [allItemsColor, solvedItemsColor] = useTheme(ALL_COLOR_TOKEN, SOLVED_COLOR_TOKEN);
     const { t } = useTranslation();
     const data = useMemo(
         () =>
@@ -29,32 +28,24 @@ export const Chart = ({ stats }: IChart) => {
 
                     // All items
                     result.datasets[0].data.push(item.items);
-                    result.datasets[0].backgroundColor = colors[1];
+                    result.datasets[0].backgroundColor = allItemsColor;
 
                     // Solved items
                     result.datasets[1].data.push(item.solved);
-                    result.datasets[1].backgroundColor = colors[0];
+                    result.datasets[1].backgroundColor = solvedItemsColor;
 
                     return result;
                 },
                 {
                     labels: [],
                     datasets: [
-                        { label: t('items'), data: [], backgroundColor: colors[0] },
-                        { label: t('solved'), data: [], backgroundColor: colors[0] },
+                        { label: t('items'), data: [], backgroundColor: allItemsColor },
+                        { label: t('solved'), data: [], backgroundColor: solvedItemsColor },
                     ],
                 },
             ),
-        [stats, colors, t],
+        [stats, allItemsColor, solvedItemsColor, t],
     );
-
-    useEffect(() => {
-        const unsubscribe = onThemeChange(() => setColors(getColors()));
-
-        return () => {
-            unsubscribe();
-        };
-    }, []);
 
     return <div className={styles.container}>{data && <Bar options={OPTIONS} data={data} />}</div>;
 };
