@@ -94,7 +94,7 @@ export const DetailPage = () => {
             data?.items.reduce<{ solved: number; pending: number }>(
                 (result, item) => {
                     if (item.solvedAt) result.solved += 1;
-                    else if (!item.deletedAt) result.pending += 1;
+                    else result.pending += 1;
 
                     return result;
                 },

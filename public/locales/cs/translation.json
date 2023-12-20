@@ -30,6 +30,7 @@
         "E02": "Konflikt",
         "E03": "Špatný požadavek"
     },
+    "items": "Položky",
     "solved": "Vyřešené",
     "pending": "Zbývající"
 }

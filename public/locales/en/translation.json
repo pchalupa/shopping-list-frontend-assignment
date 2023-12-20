@@ -30,6 +30,7 @@
         "E02": "Conflict",
         "E03": "Bad request"
     },
+    "items": "Items",
     "solved": "Solved",
     "pending": "Pending"
 }
