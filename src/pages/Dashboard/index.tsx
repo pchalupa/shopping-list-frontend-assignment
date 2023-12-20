@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { RxPlus as PlusIcon } from 'react-icons/rx';
@@ -15,6 +15,7 @@ import { useErrorHandler } from '@hooks/useErrorHandler';
 import * as Api from '@services/api';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
+import { Chart } from './parts/Chart';
 import { Grid } from './parts/Grid';
 import styles from './styles.module.css';
 
@@ -48,6 +49,15 @@ export const DashboardPage = () => {
     const { register, handleSubmit, reset: resetForm, formState } = useForm<FormSchema>({ resolver: zodResolver(formSchema) });
     const navigate = useNavigate();
     const { t } = useTranslation();
+    const stats = useMemo(
+        () =>
+            data?.reduce<Array<{ name: string; items: number; solved: number }>>((result, item) => {
+                result.push({ name: item.name, items: item.items.length, solved: item.items.filter(({ solvedAt }) => solvedAt).length });
+
+                return result;
+            }, []),
+        [data],
+    );
 
     const handleFormSubmit = handleSubmit(async (data) => {
         const newList = await addShoppingList(data);
@@ -65,6 +75,7 @@ export const DashboardPage = () => {
     return (
         <>
             <Grid items={data} isLoading={isLoading} isRemoving={isRemovingShoppingList} onItemRemove={removeShoppingList} />
+            <Chart stats={stats} />
             <Button icon={PlusIcon} variant="success" className={styles.addButton} onClick={handleAddButtonClick} />
             <AddListDialog dialogRef={dialogRef}>
                 {() => (
