@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.6.0...0.7.0) (2023-12-20)
+
+### Features
+
+-   **dashboard:** add chart ([#55](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/55)) ([68fb67f](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/68fb67f5f36fee030d6143ed3e01d94c50991712))
+
+### Code Refactoring
+
+-   **theme:** add use theme hook ([ad7e374](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/ad7e374e10ccdd524f267c4bd17375f6a9f57909))
+
 ## [0.6.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.5.0...0.6.0) (2023-12-19)
 
 ### Features
