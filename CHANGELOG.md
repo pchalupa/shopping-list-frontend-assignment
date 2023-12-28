@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.1](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.7.0...0.7.1) (2023-12-28)
+
+### Bug Fixes
+
+-   scale step ([be4b16f](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/be4b16ff700baedd8a3554dfa97334cce14d29bf))
+
+### Chores
+
+-   **deps-dev:** bump @types/react from 18.2.39 to 18.2.45 ([#57](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/57)) ([46ff25b](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/46ff25b7c5065f5541d062b1f47b5e035084d795))
+-   **deps-dev:** bump prettier from 3.1.0 to 3.1.1 ([#58](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/58)) ([86439a9](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/86439a9c131c3e69fe78646a156517ceabfb806e))
+-   **deps-dev:** bump vercel from 32.6.1 to 33.0.1 ([#60](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/60)) ([da7fd55](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/da7fd55116ec56968de2679ee8fffb965809eb2b))
+-   **deps:** bump react-i18next from 13.5.0 to 14.0.0 ([#59](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/59)) ([47b1414](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/47b14147c762dfaf22c6364dbca28ea364e2e24d))
+
 ## [0.7.0](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.6.0...0.7.0) (2023-12-20)
 
 ### Features
