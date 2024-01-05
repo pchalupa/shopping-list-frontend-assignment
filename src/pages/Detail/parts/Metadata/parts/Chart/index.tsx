@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '@services/theme/useTheme';
 
 import { OPTIONS, PENDING_COLOR_TOKEN, SOLVED_COLOR_TOKEN } from './index.preset';
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 interface IPlot {
     solved: number;
