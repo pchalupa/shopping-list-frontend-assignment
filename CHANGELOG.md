@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.2](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.7.1...0.7.2) (2024-01-05)
+
+### Bug Fixes
+
+-   chart scaling ([#65](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/65)) ([255bb5c](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/255bb5c36411c0443801369fed0f4b69e2b5a0b5))
+
+### Chores
+
+-   **deps-dev:** bump @types/react-dom from 18.2.17 to 18.2.18 ([#61](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/61)) ([c0da83f](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/c0da83f3a4140973047418fd2c7cbdaabf19bfcc))
+-   **deps-dev:** bump cspell from 8.1.3 to 8.3.1 ([#63](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/63)) ([99f1373](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/99f1373e07c352175c149189e13480bcb1af6db1))
+-   **deps-dev:** bump eslint from 8.55.0 to 8.56.0 ([#62](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/62)) ([f8afa8b](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/f8afa8b3f1be672baea025f6143b11e1c25a2522))
+-   **deps:** bump i18next from 23.7.11 to 23.7.13 ([#64](https://github.com/pchalupa/shopping-list-frontend-assignment/issues/64)) ([5412858](https://github.com/pchalupa/shopping-list-frontend-assignment/commit/5412858e2badbe16c2a9027e105567e520fb19ac))
+
 ## [0.7.1](https://github.com/pchalupa/shopping-list-frontend-assignment/compare/0.7.0...0.7.1) (2023-12-28)
 
 ### Bug Fixes
